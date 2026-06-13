@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://nouylujx4p6g"]
 
-[ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://paddle.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bscb3hpn6rys8" path="res://ball.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://tym16h72vrs2" path="res://brick.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://vmxt64n7u08p" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bscb3hpn6rys8" path="res://components/ball/ball.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://tym16h72vrs2" path="res://components/brick/brick.tscn" id="3_h2yge"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0xm2m"]
 normal = Vector2(1, 0)
@@ -13,9 +15,11 @@ normal = Vector2(-1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1bvp3"]
 normal = Vector2(0, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lquwl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1975, 66)
 
 [node name="Node2D" type="Node2D" unique_id=891628590]
+script = ExtResource("1_lquwl")
 
 [node name="Ball" parent="." unique_id=1611560028 instance=ExtResource("2_h2yge")]
 position = Vector2(928, 960)
@@ -47,11 +51,13 @@ position = Vector2(100, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Top" unique_id=77718900]
 shape = SubResource("WorldBoundaryShape2D_1bvp3")
 
-[node name="Bottom" type="StaticBody2D" parent="World" unique_id=649984008]
-position = Vector2(100, 1080)
+[node name="Hitbox" type="Area2D" parent="World" unique_id=648166148]
+script = ExtResource("3_1bvp3")
+metadata/_custom_type_script = "uid://cpf34tsssw8o0"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Bottom" unique_id=1802079828]
-shape = SubResource("WorldBoundaryShape2D_lquwl")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Hitbox" unique_id=1802079828]
+position = Vector2(964.5, 1120)
+shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="Bricks" type="Node2D" parent="." unique_id=956615947]
 

@@ -1,5 +1,7 @@
 class_name Ball extends CharacterBody2D
 
+signal died()
+
 @export var speed: float = 1000
 var angle: Vector2 = Vector2.ONE
 
@@ -17,3 +19,6 @@ func _physics_process(delta: float) -> void:
         var collider = kinematic_collision.get_collider()
         if collider != null and collider.has_method("on_ball_collision"):
             collider.on_ball_collision(self )
+
+func on_hit(_damage: int) -> void:
+    died.emit()
