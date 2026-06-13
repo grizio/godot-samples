@@ -22,6 +22,7 @@ size = Vector2(1975, 66)
 
 [node name="Node2D" type="Node2D" unique_id=891628590]
 script = ExtResource("1_lquwl")
+ball_acceleration = 100.0
 
 [node name="Game" type="Node2D" parent="." unique_id=873526747]
 
@@ -295,3 +296,6 @@ autostart = true
 
 [node name="GameOver" parent="." unique_id=971348591 instance=ExtResource("6_7mycd")]
 visible = false
+
+[node name="AccelerationTimer" type="Timer" parent="." unique_id=496416547]
+autostart = true

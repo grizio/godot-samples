@@ -1,6 +1,6 @@
 class_name Ball extends CharacterBody2D
 
-signal died()
+signal died(ball: Ball)
 
 @export var speed: float = 1000
 @export var variant: Constants.Variant = Constants.Variant.GREEN:
@@ -33,4 +33,4 @@ func _physics_process(delta: float) -> void:
             collider.on_ball_collision(self )
 
 func on_hit(_damage: int) -> void:
-    died.emit()
+    died.emit(self )
