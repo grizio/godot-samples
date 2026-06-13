@@ -7,3 +7,6 @@ func _physics_process(delta: float) -> void:
         move_and_collide(Vector2(-speed * delta, 0))
     elif Input.is_action_pressed("ui_right"):
         move_and_collide(Vector2(speed * delta, 0))
+
+func on_ball_collision(ball: Ball) -> void:
+    ball.set_direction((ball.global_position - global_position).normalized())

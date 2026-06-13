@@ -10,3 +10,6 @@ class_name Brick extends Node2D
 
 func hit() -> void:
     queue_free()
+
+func on_ball_collision(_ball: Ball) -> void:
+    hit()
