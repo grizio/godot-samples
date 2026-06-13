@@ -4,8 +4,10 @@ const ball_scene: PackedScene = preload("uid://bscb3hpn6rys8")
 
 var balls: int = 0
 
-@onready var ball_generation_timer: Timer = $BallGenerationTimer
-@onready var paddle: Paddle = %Paddle
+@onready var game: Node2D = $Game
+@onready var ball_generation_timer: Timer = $Game/BallGenerationTimer
+@onready var paddle: Paddle = %Game/Paddle
+@onready var game_over: GameOver = $GameOver
 
 func _ready() -> void:
     _setup_ball(self )
@@ -22,7 +24,7 @@ func _setup_ball(node: Node) -> void:
 func _on_ball_died() -> void:
     balls -= 1
     if balls <= 0:
-        print("Game over")
+        _on_game_over()
 
 func _on_ball_generation_timer_timeout() -> void:
     var ball: Ball = ball_scene.instantiate()
@@ -31,3 +33,7 @@ func _on_ball_generation_timer_timeout() -> void:
     ball.died.connect(_on_ball_died)
     balls += 1
     add_child(ball)
+
+func _on_game_over() -> void:
+    game_over.visible = true
+    get_tree().paused = true
