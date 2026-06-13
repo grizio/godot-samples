@@ -3,6 +3,18 @@ class_name Ball extends CharacterBody2D
 signal died()
 
 @export var speed: float = 1000
+@export var variant: Constants.Variant = Constants.Variant.GREEN:
+    set(value):
+        variant = value
+        if polygon != null:
+            match value:
+                Constants.Variant.RED:
+                    polygon.color = Color.RED
+                Constants.Variant.GREEN:
+                    polygon.color = Color.GREEN
+
+@onready var polygon: Polygon2D = $Polygon2D
+
 var angle: Vector2 = Vector2.ONE
 
 func bounce(normal: Vector2) -> void:

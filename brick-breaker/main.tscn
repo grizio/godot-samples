@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://tym16h72vrs2" path="res://components/brick/brick.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bg6fc4buiy8t5" path="res://ui/game_over/GameOver.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bcem0unca8jdu" path="res://components/brick/red_brick.tscn" id="7_272bh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0xm2m"]
 normal = Vector2(1, 0)
@@ -25,13 +26,14 @@ script = ExtResource("1_lquwl")
 [node name="Game" type="Node2D" parent="." unique_id=873526747]
 
 [node name="Ball" parent="Game" unique_id=1611560028 instance=ExtResource("2_h2yge")]
-position = Vector2(928, 960)
+position = Vector2(1728, 928)
 speed = 800.0
 
 [node name="Paddle" parent="Game" unique_id=13024222 instance=ExtResource("1_0xm2m")]
 unique_name_in_owner = true
-position = Vector2(944, 1025)
+position = Vector2(1744, 993)
 speed = 1000.0
+variant = 1
 
 [node name="World" type="Node2D" parent="Game" unique_id=581306616]
 metadata/_edit_lock_ = true
@@ -69,289 +71,223 @@ shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="Brick" parent="Game/Bricks" unique_id=512584707 instance=ExtResource("3_h2yge")]
 position = Vector2(160, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick2" parent="Game/Bricks" unique_id=1021999730 instance=ExtResource("3_h2yge")]
 position = Vector2(160, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick3" parent="Game/Bricks" unique_id=1030479349 instance=ExtResource("3_h2yge")]
 position = Vector2(160, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick4" parent="Game/Bricks" unique_id=540850728 instance=ExtResource("3_h2yge")]
 position = Vector2(160, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick5" parent="Game/Bricks" unique_id=1302770849 instance=ExtResource("3_h2yge")]
 position = Vector2(160, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick6" parent="Game/Bricks" unique_id=2073676259 instance=ExtResource("3_h2yge")]
 position = Vector2(160, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick7" parent="Game/Bricks" unique_id=557332529 instance=ExtResource("3_h2yge")]
 position = Vector2(320, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick8" parent="Game/Bricks" unique_id=826737979 instance=ExtResource("3_h2yge")]
 position = Vector2(320, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick9" parent="Game/Bricks" unique_id=1839997755 instance=ExtResource("3_h2yge")]
 position = Vector2(320, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick10" parent="Game/Bricks" unique_id=849297096 instance=ExtResource("3_h2yge")]
 position = Vector2(320, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick11" parent="Game/Bricks" unique_id=705429177 instance=ExtResource("3_h2yge")]
 position = Vector2(320, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick12" parent="Game/Bricks" unique_id=548497274 instance=ExtResource("3_h2yge")]
 position = Vector2(320, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick13" parent="Game/Bricks" unique_id=402503231 instance=ExtResource("3_h2yge")]
 position = Vector2(480, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick14" parent="Game/Bricks" unique_id=180251162 instance=ExtResource("3_h2yge")]
 position = Vector2(480, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick15" parent="Game/Bricks" unique_id=1243278625 instance=ExtResource("3_h2yge")]
 position = Vector2(480, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick16" parent="Game/Bricks" unique_id=637588870 instance=ExtResource("3_h2yge")]
 position = Vector2(480, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick17" parent="Game/Bricks" unique_id=936623255 instance=ExtResource("3_h2yge")]
 position = Vector2(480, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick18" parent="Game/Bricks" unique_id=1000187551 instance=ExtResource("3_h2yge")]
 position = Vector2(480, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick19" parent="Game/Bricks" unique_id=1243641140 instance=ExtResource("3_h2yge")]
 position = Vector2(640, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick20" parent="Game/Bricks" unique_id=461166551 instance=ExtResource("3_h2yge")]
 position = Vector2(640, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick21" parent="Game/Bricks" unique_id=51323089 instance=ExtResource("3_h2yge")]
 position = Vector2(640, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick22" parent="Game/Bricks" unique_id=1164364302 instance=ExtResource("3_h2yge")]
 position = Vector2(640, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick23" parent="Game/Bricks" unique_id=2051505872 instance=ExtResource("3_h2yge")]
 position = Vector2(640, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick24" parent="Game/Bricks" unique_id=1865169051 instance=ExtResource("3_h2yge")]
 position = Vector2(640, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick25" parent="Game/Bricks" unique_id=1926672029 instance=ExtResource("3_h2yge")]
 position = Vector2(800, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick26" parent="Game/Bricks" unique_id=357047509 instance=ExtResource("3_h2yge")]
 position = Vector2(800, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick27" parent="Game/Bricks" unique_id=194741795 instance=ExtResource("3_h2yge")]
 position = Vector2(800, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick28" parent="Game/Bricks" unique_id=463956006 instance=ExtResource("3_h2yge")]
 position = Vector2(800, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick29" parent="Game/Bricks" unique_id=1761646994 instance=ExtResource("3_h2yge")]
 position = Vector2(800, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick30" parent="Game/Bricks" unique_id=874994111 instance=ExtResource("3_h2yge")]
 position = Vector2(800, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick31" parent="Game/Bricks" unique_id=1752532184 instance=ExtResource("3_h2yge")]
 position = Vector2(960, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick32" parent="Game/Bricks" unique_id=1226958897 instance=ExtResource("3_h2yge")]
 position = Vector2(960, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick33" parent="Game/Bricks" unique_id=1822483147 instance=ExtResource("3_h2yge")]
 position = Vector2(960, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick34" parent="Game/Bricks" unique_id=457824954 instance=ExtResource("3_h2yge")]
 position = Vector2(960, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick35" parent="Game/Bricks" unique_id=141607420 instance=ExtResource("3_h2yge")]
 position = Vector2(960, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick36" parent="Game/Bricks" unique_id=1223082918 instance=ExtResource("3_h2yge")]
 position = Vector2(960, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick37" parent="Game/Bricks" unique_id=355837024 instance=ExtResource("3_h2yge")]
 position = Vector2(1120, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick38" parent="Game/Bricks" unique_id=1834130163 instance=ExtResource("3_h2yge")]
 position = Vector2(1120, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick39" parent="Game/Bricks" unique_id=1480873957 instance=ExtResource("3_h2yge")]
 position = Vector2(1120, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick40" parent="Game/Bricks" unique_id=2115421372 instance=ExtResource("3_h2yge")]
 position = Vector2(1120, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick41" parent="Game/Bricks" unique_id=452936064 instance=ExtResource("3_h2yge")]
 position = Vector2(1120, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick42" parent="Game/Bricks" unique_id=348534718 instance=ExtResource("3_h2yge")]
 position = Vector2(1120, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick43" parent="Game/Bricks" unique_id=1446043365 instance=ExtResource("3_h2yge")]
 position = Vector2(1280, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick44" parent="Game/Bricks" unique_id=1855184869 instance=ExtResource("3_h2yge")]
 position = Vector2(1280, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick45" parent="Game/Bricks" unique_id=1843938869 instance=ExtResource("3_h2yge")]
 position = Vector2(1280, 288)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick46" parent="Game/Bricks" unique_id=817648760 instance=ExtResource("3_h2yge")]
 position = Vector2(1280, 384)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick47" parent="Game/Bricks" unique_id=1076556404 instance=ExtResource("3_h2yge")]
 position = Vector2(1280, 480)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick48" parent="Game/Bricks" unique_id=421434110 instance=ExtResource("3_h2yge")]
 position = Vector2(1280, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="Brick49" parent="Game/Bricks" unique_id=665595636 instance=ExtResource("3_h2yge")]
 position = Vector2(1440, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick50" parent="Game/Bricks" unique_id=1148215916 instance=ExtResource("3_h2yge")]
 position = Vector2(1440, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
-[node name="Brick51" parent="Game/Bricks" unique_id=1174998100 instance=ExtResource("3_h2yge")]
-position = Vector2(1440, 288)
-color = Color(1, 1, 1, 1)
-
 [node name="Brick52" parent="Game/Bricks" unique_id=2043456729 instance=ExtResource("3_h2yge")]
-position = Vector2(1440, 384)
-color = Color(1, 1, 1, 1)
+position = Vector2(1440, 288)
 
 [node name="Brick53" parent="Game/Bricks" unique_id=825396976 instance=ExtResource("3_h2yge")]
-position = Vector2(1440, 480)
-color = Color(1, 1, 1, 1)
+position = Vector2(1440, 384)
 
 [node name="Brick54" parent="Game/Bricks" unique_id=1971797510 instance=ExtResource("3_h2yge")]
-position = Vector2(1440, 576)
-color = Color(1, 1, 1, 1)
+position = Vector2(1440, 480)
 
 [node name="Brick55" parent="Game/Bricks" unique_id=368795699 instance=ExtResource("3_h2yge")]
 position = Vector2(1600, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick56" parent="Game/Bricks" unique_id=2042624185 instance=ExtResource("3_h2yge")]
 position = Vector2(1600, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
-[node name="Brick57" parent="Game/Bricks" unique_id=371666488 instance=ExtResource("3_h2yge")]
-position = Vector2(1600, 288)
-color = Color(1, 1, 1, 1)
-
 [node name="Brick58" parent="Game/Bricks" unique_id=522965293 instance=ExtResource("3_h2yge")]
-position = Vector2(1600, 384)
-color = Color(1, 1, 1, 1)
+position = Vector2(1600, 288)
 
 [node name="Brick59" parent="Game/Bricks" unique_id=284533133 instance=ExtResource("3_h2yge")]
-position = Vector2(1600, 480)
-color = Color(1, 1, 1, 1)
+position = Vector2(1600, 384)
 
 [node name="Brick60" parent="Game/Bricks" unique_id=2057709678 instance=ExtResource("3_h2yge")]
-position = Vector2(1600, 576)
-color = Color(1, 1, 1, 1)
+position = Vector2(1600, 480)
 
 [node name="Brick61" parent="Game/Bricks" unique_id=777255125 instance=ExtResource("3_h2yge")]
 position = Vector2(1760, 96)
-color = Color(1, 1, 1, 1)
 life = 2
 
 [node name="Brick62" parent="Game/Bricks" unique_id=666496702 instance=ExtResource("3_h2yge")]
 position = Vector2(1760, 192)
-color = Color(1, 1, 1, 1)
 life = 2
 
-[node name="Brick63" parent="Game/Bricks" unique_id=1722419293 instance=ExtResource("3_h2yge")]
-position = Vector2(1760, 288)
-color = Color(1, 1, 1, 1)
-
 [node name="Brick64" parent="Game/Bricks" unique_id=465790748 instance=ExtResource("3_h2yge")]
-position = Vector2(1760, 384)
-color = Color(1, 1, 1, 1)
+position = Vector2(1760, 288)
 
 [node name="Brick65" parent="Game/Bricks" unique_id=1376272118 instance=ExtResource("3_h2yge")]
-position = Vector2(1760, 480)
-color = Color(1, 1, 1, 1)
+position = Vector2(1760, 384)
 
 [node name="Brick66" parent="Game/Bricks" unique_id=878223799 instance=ExtResource("3_h2yge")]
+position = Vector2(1760, 480)
+
+[node name="RedBrick" parent="Game/Bricks" unique_id=2018311710 instance=ExtResource("7_272bh")]
+position = Vector2(1440, 576)
+
+[node name="RedBrick2" parent="Game/Bricks" unique_id=1315586625 instance=ExtResource("7_272bh")]
+position = Vector2(1600, 576)
+
+[node name="RedBrick3" parent="Game/Bricks" unique_id=786069601 instance=ExtResource("7_272bh")]
 position = Vector2(1760, 576)
-color = Color(1, 1, 1, 1)
 
 [node name="BallGenerationTimer" type="Timer" parent="Game" unique_id=1179359081]
 wait_time = 10.0

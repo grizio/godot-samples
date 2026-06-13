@@ -7,6 +7,7 @@
 [node name="Ball" type="CharacterBody2D" unique_id=1543195064]
 collision_layer = 2
 script = ExtResource("1_x8fbi")
+speed = null
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=828157798]
 polygon = PackedVector2Array(-7, -7, 0, -10, 7, -7, 10, 0, 7, 7, 0, 10, -7, 7, -10, 0)

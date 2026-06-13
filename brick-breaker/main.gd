@@ -6,7 +6,7 @@ var balls: int = 0
 
 @onready var game: Node2D = $Game
 @onready var ball_generation_timer: Timer = $Game/BallGenerationTimer
-@onready var paddle: Paddle = %Game/Paddle
+@onready var paddle: Paddle = %Paddle
 @onready var game_over: GameOver = $GameOver
 
 func _ready() -> void:

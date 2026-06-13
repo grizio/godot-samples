@@ -1,4 +1,4 @@
-class_name Brick extends StaticBody2D
+class_name RedBrick extends StaticBody2D
 
 @export var life: int = 1
 
@@ -14,5 +14,6 @@ func hit() -> void:
     else:
         life_label.text = str(life)
 
-func on_ball_collision(_ball: Ball) -> void:
-    hit()
+func on_ball_collision(ball: Ball) -> void:
+    if ball.variant == Constants.Variant.RED:
+        hit()
