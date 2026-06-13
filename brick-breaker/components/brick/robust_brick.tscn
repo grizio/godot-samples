@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://df6c7h7p1iemx"]
+
+[ext_resource type="Script" uid="uid://bd3co8tvcydpy" path="res://components/brick/robust_brick.gd" id="1_qoffg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebm25"]
+size = Vector2(64, 32)
+
+[node name="RobustBrick" type="StaticBody2D" unique_id=59127468]
+script = ExtResource("1_qoffg")
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1730191629]
+color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+polygon = PackedVector2Array(-32, -16, 32, -16, 32, 16, -32, 16)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=257874288]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-30, -14, 30, -14, 30, 14, -30, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977936810]
+visible = false
+shape = SubResource("RectangleShape2D_ebm25")

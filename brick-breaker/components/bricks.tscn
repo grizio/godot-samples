@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c18sg0gfo3e1h"]
+
+[ext_resource type="PackedScene" uid="uid://tym16h72vrs2" path="res://components/brick/simple_brick.tscn" id="1_kw0e7"]
+[ext_resource type="PackedScene" uid="uid://bcem0unca8jdu" path="res://components/brick/red_brick.tscn" id="2_mbj1x"]
+[ext_resource type="PackedScene" uid="uid://df6c7h7p1iemx" path="res://components/brick/robust_brick.tscn" id="3_mbj1x"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1gdq0"]
+scenes/1/scene = ExtResource("1_kw0e7")
+scenes/2/scene = ExtResource("2_mbj1x")
+scenes/3/scene = ExtResource("3_mbj1x")
+
+[sub_resource type="TileSet" id="TileSet_r14xu"]
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetScenesCollectionSource_1gdq0")
+
+[node name="Bricks" type="TileMapLayer" unique_id=1649302324]
+tile_set = SubResource("TileSet_r14xu")

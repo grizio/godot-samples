@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bujnluj04jrr" path="res://components/paddle/paddle.gd" id="1_0sbc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sbc1"]
-size = Vector2(256, 32)
+size = Vector2(256, 8)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=13024222]
 script = ExtResource("1_0sbc1")
@@ -12,7 +12,8 @@ variant = null
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=701327906]
 color = Color(0, 1, 0, 1)
-polygon = PackedVector2Array(-128, -16, 128, -16, 128, 16, -128, 16)
+polygon = PackedVector2Array(-128, -4, 128, -4, 128, 4, -128, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=276584574]
 shape = SubResource("RectangleShape2D_0sbc1")
+one_way_collision = true
