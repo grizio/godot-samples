@@ -26,6 +26,7 @@ position = Vector2(928, 960)
 speed = 800.0
 
 [node name="Paddle" parent="." unique_id=13024222 instance=ExtResource("1_0xm2m")]
+unique_name_in_owner = true
 position = Vector2(944, 1025)
 speed = 1000.0
 
@@ -52,6 +53,8 @@ position = Vector2(100, 0)
 shape = SubResource("WorldBoundaryShape2D_1bvp3")
 
 [node name="Hitbox" type="Area2D" parent="World" unique_id=648166148]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("3_1bvp3")
 metadata/_custom_type_script = "uid://cpf34tsssw8o0"
 
@@ -258,3 +261,7 @@ position = Vector2(1760, 480)
 
 [node name="Brick66" parent="Bricks" unique_id=878223799 instance=ExtResource("3_h2yge")]
 position = Vector2(1760, 576)
+
+[node name="BallGenerationTimer" type="Timer" parent="." unique_id=1179359081]
+wait_time = 10.0
+autostart = true
