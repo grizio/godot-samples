@@ -13,6 +13,7 @@ class_name Paddle extends CharacterBody2D
                     polygon.color = Color.GREEN
 
 @onready var polygon: Polygon2D = $Polygon2D
+@onready var shape: CapsuleShape2D = $CollisionShape2D.shape as CapsuleShape2D
 
 var target_x: float = INF
 
@@ -34,5 +35,10 @@ func _unhandled_input(event: InputEvent) -> void:
         target_x = INF
 
 func on_ball_collision(ball: Ball) -> void:
-    ball.set_direction((ball.global_position - global_position).normalized())
+    var distance_from_center = abs(ball.global_position.x - global_position.x)
+    var max_distance = shape.height / 2
+    
+    var x = distance_from_center * 4 / max_distance
+
+    ball.set_direction(Vector2(x * sign(ball.global_position.x - global_position.x), -1).normalized())
     ball.variant = variant

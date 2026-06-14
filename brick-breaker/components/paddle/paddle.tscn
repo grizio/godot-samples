@@ -8,8 +8,6 @@ height = 256.0
 
 [node name="Paddle" type="CharacterBody2D" unique_id=13024222]
 script = ExtResource("1_0sbc1")
-speed = null
-variant = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=444858306]
 rotation = 1.5707964
