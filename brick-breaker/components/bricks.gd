@@ -9,11 +9,11 @@ func _ready() -> void:
     child_exiting_tree.connect(_on_child_exiting_tree)
 
 func _on_child_entered_tree(child: Node) -> void:
-    if child is Brick:
+    if child is Brick and not child is UnbreakableBrick:
         total_bricks += 1
         total_bricks_changed.emit(total_bricks)
 
 func _on_child_exiting_tree(child: Node) -> void:
-    if child is Brick:
+    if child is Brick and not child is UnbreakableBrick:
         total_bricks -= 1
         total_bricks_changed.emit(total_bricks)

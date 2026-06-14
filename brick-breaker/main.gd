@@ -1,12 +1,5 @@
 extends Node2D
 
-const ball_scene: PackedScene = preload("uid://bscb3hpn6rys8")
-
-@export var ball_speed: float = 400
-@export_range(0, 2000, 1, "suffix: px/minute") var ball_acceleration: float = 200
-
-var balls: Array[Ball] = []
-
 @onready var world: Node2D = $World
 
 var current_level: Level
