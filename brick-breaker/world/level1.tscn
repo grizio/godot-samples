@@ -6,6 +6,9 @@
 [node name="Level" unique_id=727468240 node_paths=PackedStringArray("bricks") instance=ExtResource("1_8exih")]
 bricks = NodePath("Bricks")
 
+[node name="Paddle" parent="." index="1" unique_id=13024222]
+max_speed = 2000.0
+
 [node name="Bricks" parent="." index="4" unique_id=1649302324 instance=ExtResource("2_ew4qw")]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAFAAoAAAAAAAAAAQAGAAoAAAAAAAAAAQAHAAoAAAAAAAAAAQAIAAoAAAAAAAAAAQAJAAoAAAAAAAAAAQAFAAkAAAAAAAAAAgAGAAkAAAAAAAAAAgAHAAkAAAAAAAAAAgAIAAkAAAAAAAAAAgAJAAkAAAAAAAAAAgA=")
