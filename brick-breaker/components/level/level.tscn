@@ -63,3 +63,6 @@ autostart = true
 
 [node name="AccelerationTimer" type="Timer" parent="." unique_id=75686271]
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=430988970]
+position = Vector2(960, 544)

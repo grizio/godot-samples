@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://nouylujx4p6g"]
 
 [ext_resource type="Script" uid="uid://vmxt64n7u08p" path="res://main.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bg6fc4buiy8t5" path="res://ui/game_over/game_over.tscn" id="6_7mycd"]
-[ext_resource type="PackedScene" uid="uid://ddgms2eh8wbj7" path="res://ui/win/win.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://bd2mqn1l55poh" path="res://world/world/world.tscn" id="5_lquwl"]
 
 [node name="Node2D" type="Node2D" unique_id=891628590]
 script = ExtResource("1_lquwl")
 ball_acceleration = 100.0
 
-[node name="GameOver" parent="." unique_id=971348591 instance=ExtResource("6_7mycd")]
-visible = false
-
-[node name="Win" parent="." unique_id=605256013 instance=ExtResource("7_272bh")]
-visible = false
-
-[node name="Level" parent="." unique_id=727468240 instance=ExtResource("4_1bvp3")]
+[node name="World" parent="." unique_id=804923594 instance=ExtResource("5_lquwl")]

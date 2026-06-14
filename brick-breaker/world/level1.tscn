@@ -1,0 +1,11 @@
+[gd_scene format=4 uid="uid://dfucnvshqc0ha"]
+
+[ext_resource type="PackedScene" uid="uid://byfgx0co06u0g" path="res://components/level/level.tscn" id="1_8exih"]
+[ext_resource type="PackedScene" uid="uid://c18sg0gfo3e1h" path="res://components/bricks.tscn" id="2_ew4qw"]
+
+[node name="Level" unique_id=727468240 node_paths=PackedStringArray("bricks") instance=ExtResource("1_8exih")]
+bricks = NodePath("Bricks")
+
+[node name="Bricks" parent="." index="4" unique_id=1649302324 instance=ExtResource("2_ew4qw")]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAFAAoAAAAAAAAAAQAGAAoAAAAAAAAAAQAHAAoAAAAAAAAAAQAIAAoAAAAAAAAAAQAJAAoAAAAAAAAAAQAFAAkAAAAAAAAAAgAGAAkAAAAAAAAAAgAHAAkAAAAAAAAAAgAIAAkAAAAAAAAAAgAJAAkAAAAAAAAAAgA=")

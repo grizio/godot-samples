@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bd2mqn1l55poh"]
+
+[ext_resource type="Script" uid="uid://ww24u8vcw0uc" path="res://world/world/world.gd" id="1_1tbfg"]
+[ext_resource type="PackedScene" uid="uid://bnscgobeq8sgd" path="res://world/world/world_item.tscn" id="1_jxir3"]
+[ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="2_bcrbt"]
+[ext_resource type="PackedScene" uid="uid://dfucnvshqc0ha" path="res://world/level1.tscn" id="3_wuxkr"]
+
+[node name="World" type="Node2D" unique_id=804923594]
+script = ExtResource("1_1tbfg")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=943379471]
+points = PackedVector2Array(1001, 930, 1020, 907, 997, 893, 997, 862)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Tuto" parent="." unique_id=47026659 node_paths=PackedStringArray("up") instance=ExtResource("1_jxir3")]
+offset_left = 980.0
+offset_top = 924.0
+offset_right = 1024.0
+offset_bottom = 955.0
+text = "Tuto"
+scene = ExtResource("2_bcrbt")
+label = "Tuto"
+up = NodePath("../First")
+
+[node name="First" parent="." unique_id=1624952315 node_paths=PackedStringArray("down") instance=ExtResource("1_jxir3")]
+offset_left = 980.0
+offset_top = 843.0
+offset_right = 1023.0
+offset_bottom = 874.0
+disabled = true
+text = "First"
+scene = ExtResource("3_wuxkr")
+label = "First"
+down = NodePath("../Tuto")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2114130209]
+position_smoothing_enabled = true

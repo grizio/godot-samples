@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bnscgobeq8sgd"]
+
+[ext_resource type="Script" uid="uid://pepcewih1lbt" path="res://world/world/world_item.gd" id="1_a0k0e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0k0e"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt3so"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.13803378, 0.13803375, 0.13803375, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="WorldItem" type="Button" unique_id=47026659]
+offset_right = 8.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_a0k0e")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vt3so")
+script = ExtResource("1_a0k0e")
