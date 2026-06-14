@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cgxt17jpdvwba"]
+
+[ext_resource type="Script" uid="uid://b0pj7tj7dkixa" path="res://components/brick/unbreakable_brick.gd" id="1_8jkn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrko"]
+size = Vector2(64, 32)
+
+[node name="UnbreakableBrick" type="StaticBody2D" unique_id=883028774]
+collision_layer = 12
+collision_mask = 0
+script = ExtResource("1_8jkn8")
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=2122455019]
+color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+polygon = PackedVector2Array(-32, -16, 32, -16, 32, 16, -32, 16)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=661864705]
+color = Color(0.70242256, 0.7024225, 0.7024225, 1)
+polygon = PackedVector2Array(-30, -14, 30, -14, 30, 14, -30, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347089362]
+visible = false
+shape = SubResource("RectangleShape2D_cqrko")
