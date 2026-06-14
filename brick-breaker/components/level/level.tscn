@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="2_explk"]
 [ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="3_e3qmh"]
 [ext_resource type="PackedScene" uid="uid://c4d58m4dfxmme" path="res://components/ball_generator/ball_generator.tscn" id="4_u05ky"]
+[ext_resource type="PackedScene" uid="uid://ctfbq4t0jdwo7" path="res://components/fire_trigger/fire_trigger.tscn" id="5_qrj6a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e3qmh"]
 normal = Vector2(1, 0)
@@ -70,3 +71,6 @@ position = Vector2(960, 544)
 
 [node name="BallGenerator" parent="." unique_id=1475901960 instance=ExtResource("4_u05ky")]
 position = Vector2(192, 1056)
+
+[node name="FireTrigger" parent="." unique_id=977382520 instance=ExtResource("5_qrj6a")]
+position = Vector2(320, 1056)

@@ -1,4 +1,4 @@
 class_name SimpleBrick extends Brick
 
-func on_ball_collision(_ball: Ball) -> void:
+func on_hit(_damage: int, _type: Constants.Variant) -> void:
     queue_free()

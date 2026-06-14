@@ -25,6 +25,10 @@ Inputs="*uid://bv1ue5boaknfu"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[global_group]
+
+ball=""
+
 [input]
 
 left={
@@ -58,6 +62,8 @@ change_variant={
 
 2d_physics/layer_1="physic"
 2d_physics/layer_2="ball"
+2d_physics/layer_3="brick"
+2d_physics/layer_4="brick_solid"
 
 [physics]
 

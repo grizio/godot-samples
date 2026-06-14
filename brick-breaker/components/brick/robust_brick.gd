@@ -8,8 +8,8 @@ var life: int = 2
 func _ready() -> void:
     polygon.color = Color.BLACK
 
-func hit() -> void:
-    life -= 1
+func on_hit(damage: int, _type: Constants.Variant) -> void:
+    life -= damage
     match life:
         0:
             queue_free()
@@ -17,6 +17,3 @@ func hit() -> void:
             polygon.color = Color.WHITE
         2:
             polygon.color = Color.BLACK
-
-func on_ball_collision(_ball: Ball) -> void:
-    hit()

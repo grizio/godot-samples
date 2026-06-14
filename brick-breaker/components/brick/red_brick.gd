@@ -1,5 +1,5 @@
 class_name RedBrick extends Brick
 
-func on_ball_collision(ball: Ball) -> void:
-    if ball.variant == Constants.Variant.RED:
+func on_hit(_damage: int, _type: Constants.Variant) -> void:
+    if _type == Constants.Variant.RED:
         queue_free()

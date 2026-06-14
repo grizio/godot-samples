@@ -1,16 +1,51 @@
 [gd_scene format=3 uid="uid://bscb3hpn6rys8"]
 
 [ext_resource type="Script" uid="uid://ni5b1l2tnthq" path="res://components/ball/ball.gd" id="1_x8fbi"]
+[ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="2_usys6"]
+
+[sub_resource type="Gradient" id="Gradient_usys6"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6j5n"]
+gradient = SubResource("Gradient_usys6")
+width = 5
+height = 5
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_usys6"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 100, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x8fbi"]
 
-[node name="Ball" type="CharacterBody2D" unique_id=1543195064]
+[sub_resource type="CircleShape2D" id="CircleShape2D_usys6"]
+radius = 10.5
+
+[node name="Ball" type="CharacterBody2D" unique_id=1543195064 groups=["ball"]]
 collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_x8fbi")
-speed = null
+
+[node name="FireParticles" type="GPUParticles2D" parent="." unique_id=1342024297]
+emitting = false
+texture = SubResource("GradientTexture2D_w6j5n")
+trail_enabled = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_usys6")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=828157798]
 polygon = PackedVector2Array(-7, -7, 0, -10, 7, -7, 10, 0, 7, 7, 0, 10, -7, 7, -10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1424078609]
 shape = SubResource("CircleShape2D_x8fbi")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=674555117]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_usys6")
+metadata/_custom_type_script = "uid://cpf34tsssw8o0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1367866138]
+shape = SubResource("CircleShape2D_usys6")

@@ -6,6 +6,7 @@
 size = Vector2(64, 32)
 
 [node name="Brick" type="StaticBody2D" unique_id=540850728]
+collision_layer = 4
 script = ExtResource("1_bjqtm")
 
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1586016383]

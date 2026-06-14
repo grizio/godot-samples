@@ -28,7 +28,6 @@ offset_left = 980.0
 offset_top = 843.0
 offset_right = 1023.0
 offset_bottom = 874.0
-disabled = true
 text = "First"
 scene = ExtResource("3_wuxkr")
 label = "First"

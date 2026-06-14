@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ctfbq4t0jdwo7"]
+
+[ext_resource type="Script" uid="uid://cyaxiskuawarc" path="res://components/fire_trigger/fire_trigger.gd" id="1_bnl00"]
+
+[node name="FireTrigger" type="Node2D" unique_id=977382520]
+script = ExtResource("1_bnl00")
+
+[node name="Timer" type="Timer" parent="." unique_id=659573698]
+wait_time = 5.0
+autostart = true

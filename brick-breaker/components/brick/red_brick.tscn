@@ -6,6 +6,7 @@
 size = Vector2(64, 32)
 
 [node name="RedBrick" type="StaticBody2D" unique_id=2018311710]
+collision_layer = 4
 script = ExtResource("1_gv2ln")
 
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=5687239]
