@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://df6c7h7p1iemx" path="res://components/brick/robust_brick.tscn" id="3_mbj1x"]
 [ext_resource type="Script" uid="uid://b4w2nvonj077p" path="res://components/bricks.gd" id="4_1gdq0"]
 [ext_resource type="PackedScene" uid="uid://cgxt17jpdvwba" path="res://components/brick/unbreakable_brick.tscn" id="4_aui7o"]
+[ext_resource type="PackedScene" uid="uid://dk6gjdyyx5khj" path="res://components/brick/explosive_brick.tscn" id="5_f47yy"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1gdq0"]
 scenes/1/scene = ExtResource("1_kw0e7")
 scenes/2/scene = ExtResource("2_mbj1x")
 scenes/3/scene = ExtResource("3_mbj1x")
 scenes/4/scene = ExtResource("4_aui7o")
+scenes/5/scene = ExtResource("5_f47yy")
 
 [sub_resource type="TileSet" id="TileSet_r14xu"]
 tile_size = Vector2i(64, 32)
