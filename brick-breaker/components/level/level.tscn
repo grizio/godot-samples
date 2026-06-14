@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://byfgx0co06u0g"]
+
+[ext_resource type="Script" uid="uid://f8727crsjv6d" path="res://components/level/level.gd" id="1_yqsmv"]
+[ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="2_explk"]
+[ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="3_e3qmh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e3qmh"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u05ky"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrj6a"]
+normal = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ugk"]
+size = Vector2(1975, 66)
+
+[node name="Level" type="Node2D" unique_id=727468240]
+script = ExtResource("1_yqsmv")
+
+[node name="World" type="Node2D" parent="." unique_id=260065541]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Left" type="StaticBody2D" parent="World" unique_id=279966215]
+position = Vector2(0, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Left" unique_id=2025937495]
+shape = SubResource("WorldBoundaryShape2D_e3qmh")
+
+[node name="Right" type="StaticBody2D" parent="World" unique_id=7347166]
+position = Vector2(1920, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Right" unique_id=3742184]
+shape = SubResource("WorldBoundaryShape2D_u05ky")
+
+[node name="Top" type="StaticBody2D" parent="World" unique_id=1974755280]
+position = Vector2(100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Top" unique_id=404279005]
+shape = SubResource("WorldBoundaryShape2D_qrj6a")
+
+[node name="Hitbox" type="Area2D" parent="World" unique_id=1195354630]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_explk")
+metadata/_custom_type_script = "uid://cpf34tsssw8o0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Hitbox" unique_id=1440700971]
+position = Vector2(964.5, 1120)
+shape = SubResource("RectangleShape2D_p0ugk")
+
+[node name="Paddle" parent="." unique_id=13024222 instance=ExtResource("3_e3qmh")]
+unique_name_in_owner = true
+position = Vector2(960, 992)
+speed = 2000.0
+variant = 1
+
+[node name="BallGenerationTimer" type="Timer" parent="." unique_id=545805957]
+wait_time = 10.0
+autostart = true
+
+[node name="AccelerationTimer" type="Timer" parent="." unique_id=75686271]
+autostart = true

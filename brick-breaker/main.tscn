@@ -1,80 +1,13 @@
 [gd_scene format=3 uid="uid://nouylujx4p6g"]
 
-[ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://vmxt64n7u08p" path="res://main.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://bscb3hpn6rys8" path="res://components/ball/ball.tscn" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://c18sg0gfo3e1h" path="res://components/bricks.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bg6fc4buiy8t5" path="res://ui/game_over/game_over.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ddgms2eh8wbj7" path="res://ui/win/win.tscn" id="7_272bh"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0xm2m"]
-normal = Vector2(1, 0)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h2yge"]
-normal = Vector2(-1, 0)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1bvp3"]
-normal = Vector2(0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
-size = Vector2(1975, 66)
 
 [node name="Node2D" type="Node2D" unique_id=891628590]
 script = ExtResource("1_lquwl")
 ball_acceleration = 100.0
-
-[node name="Game" type="Node2D" parent="." unique_id=873526747]
-
-[node name="Ball" parent="Game" unique_id=1611560028 instance=ExtResource("2_h2yge")]
-position = Vector2(672, 512)
-speed = 800.0
-
-[node name="Paddle" parent="Game" unique_id=13024222 instance=ExtResource("1_0xm2m")]
-unique_name_in_owner = true
-position = Vector2(976, 993)
-speed = 2000.0
-variant = 1
-
-[node name="World" type="Node2D" parent="Game" unique_id=581306616]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Left" type="StaticBody2D" parent="Game/World" unique_id=153478667]
-position = Vector2(0, 100)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/World/Left" unique_id=1644431788]
-shape = SubResource("WorldBoundaryShape2D_0xm2m")
-
-[node name="Right" type="StaticBody2D" parent="Game/World" unique_id=961200328]
-position = Vector2(1920, 100)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/World/Right" unique_id=503229239]
-shape = SubResource("WorldBoundaryShape2D_h2yge")
-
-[node name="Top" type="StaticBody2D" parent="Game/World" unique_id=1523118831]
-position = Vector2(100, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/World/Top" unique_id=77718900]
-shape = SubResource("WorldBoundaryShape2D_1bvp3")
-
-[node name="Hitbox" type="Area2D" parent="Game/World" unique_id=648166148]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("3_1bvp3")
-metadata/_custom_type_script = "uid://cpf34tsssw8o0"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/World/Hitbox" unique_id=1802079828]
-position = Vector2(964.5, 1120)
-shape = SubResource("RectangleShape2D_lquwl")
-
-[node name="BallGenerationTimer" type="Timer" parent="Game" unique_id=1179359081]
-wait_time = 10.0
-autostart = true
-
-[node name="Bricks" parent="Game" unique_id=1649302324 instance=ExtResource("5_7mycd")]
-unique_name_in_owner = true
-tile_map_data = PackedByteArray(0, 0, 13, 0, 22, 0, 0, 0, 0, 0, 0, 0, 1, 0)
 
 [node name="GameOver" parent="." unique_id=971348591 instance=ExtResource("6_7mycd")]
 visible = false
@@ -82,5 +15,4 @@ visible = false
 [node name="Win" parent="." unique_id=605256013 instance=ExtResource("7_272bh")]
 visible = false
 
-[node name="AccelerationTimer" type="Timer" parent="." unique_id=496416547]
-autostart = true
+[node name="Level" parent="." unique_id=727468240 instance=ExtResource("4_1bvp3")]
