@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://tym16h72vrs2" path="res://components/brick/simple_brick.tscn" id="1_kw0e7"]
 [ext_resource type="PackedScene" uid="uid://bcem0unca8jdu" path="res://components/brick/red_brick.tscn" id="2_mbj1x"]
 [ext_resource type="PackedScene" uid="uid://df6c7h7p1iemx" path="res://components/brick/robust_brick.tscn" id="3_mbj1x"]
+[ext_resource type="Script" uid="uid://b4w2nvonj077p" path="res://components/bricks.gd" id="4_1gdq0"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1gdq0"]
 scenes/1/scene = ExtResource("1_kw0e7")
@@ -15,3 +16,4 @@ sources/0 = SubResource("TileSetScenesCollectionSource_1gdq0")
 
 [node name="Bricks" type="TileMapLayer" unique_id=1649302324]
 tile_set = SubResource("TileSet_r14xu")
+script = ExtResource("4_1gdq0")

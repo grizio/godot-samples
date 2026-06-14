@@ -1,4 +1,4 @@
-class_name RobustBrick extends StaticBody2D
+class_name RobustBrick extends Brick
 
 
 @onready var polygon: Polygon2D = $Polygon2D

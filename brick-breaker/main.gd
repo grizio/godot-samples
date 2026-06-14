@@ -11,12 +11,15 @@ var balls: Array[Ball] = []
 @onready var ball_generation_timer: Timer = $Game/BallGenerationTimer
 @onready var paddle: Paddle = %Paddle
 @onready var game_over: GameOver = $GameOver
+@onready var win: Win = $Win
 @onready var acceleration_timer: Timer = $AccelerationTimer
+@onready var bricks: Bricks = %Bricks
 
 func _ready() -> void:
     _setup_ball(self )
     ball_generation_timer.timeout.connect(_on_ball_generation_timer_timeout)
     acceleration_timer.timeout.connect(_on_acceleration_timer_timeout)
+    bricks.total_bricks_changed.connect(_on_total_bricks_changed)
 
 func _setup_ball(node: Node) -> void:
     if node is Ball:
@@ -44,7 +47,15 @@ func _on_game_over() -> void:
     game_over.visible = true
     get_tree().paused = true
 
+func _on_win() -> void:
+    win.visible = true
+    get_tree().paused = true
+
 func _on_acceleration_timer_timeout() -> void:
     ball_speed += ball_acceleration * (acceleration_timer.wait_time / 60)
     for ball in balls:
         ball.speed = ball_speed
+
+func _on_total_bricks_changed(total_bricks: int) -> void:
+    if total_bricks == 0:
+        _on_win()
