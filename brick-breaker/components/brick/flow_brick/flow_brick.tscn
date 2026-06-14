@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bcem0unca8jdu"]
+
+[ext_resource type="Script" uid="uid://drgvfyohnjecp" path="res://components/brick/flow_brick/flow_brick.gd" id="1_gv2ln"]
+
+[sub_resource type="Gradient" id="Gradient_vfikg"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52f21"]
+gradient = SubResource("Gradient_vfikg")
+height = 32
+
+[sub_resource type="Gradient" id="Gradient_ygmib"]
+colors = PackedColorArray(0, 0.89411765, 0.2509804, 1, 0, 0.5411765, 0.31764707, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ygmib"]
+seed = -772979881
+frequency = 0.02
+offset = Vector3(-155.66942, 771.14606, 1897.5487)
+fractal_type = 3
+fractal_octaves = 2
+fractal_lacunarity = 1.4
+fractal_ping_pong_strength = 4.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ygmib"]
+width = 60
+height = 28
+noise = SubResource("FastNoiseLite_ygmib")
+color_ramp = SubResource("Gradient_ygmib")
+in_3d_space = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ocm7"]
+size = Vector2(64, 32)
+
+[node name="RedBrick" type="StaticBody2D" unique_id=2018311710]
+collision_layer = 4
+script = ExtResource("1_gv2ln")
+speed = Vector3(0, 0, 5)
+
+[node name="SpriteBorder" type="Sprite2D" parent="." unique_id=1230100903]
+texture = SubResource("GradientTexture2D_52f21")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=390804826]
+texture = SubResource("NoiseTexture2D_ygmib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1086242217]
+visible = false
+shape = SubResource("RectangleShape2D_1ocm7")

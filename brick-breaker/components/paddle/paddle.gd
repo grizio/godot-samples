@@ -2,20 +2,27 @@ class_name Paddle extends CharacterBody2D
 
 @export var speed: float = 300
 @export var max_speed: float = 300
-@export var variant: Constants.Variant = Constants.Variant.WHITE:
+@export var variant: Constants.Variant = Constants.Variant.NORMAL:
     set(value):
         variant = value
-        if polygon != null:
-            match value:
-                Constants.Variant.RED:
-                    polygon.color = Color.RED
-                Constants.Variant.WHITE:
-                    polygon.color = Color.WHITE
+        _setup_variant()
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var shape: CapsuleShape2D = $CollisionShape2D.shape as CapsuleShape2D
 
 var target_x: float = INF
+
+func _ready() -> void:
+    _setup_variant()
+
+func _setup_variant() -> void:
+    if polygon == null:
+        return
+    match variant:
+        Constants.Variant.FLOW:
+            polygon.color = Constants.color_light_green
+        Constants.Variant.NORMAL:
+            polygon.color = Constants.color_wheat
 
 func _physics_process(delta: float) -> void:
     if Input.is_action_pressed(Inputs.left):

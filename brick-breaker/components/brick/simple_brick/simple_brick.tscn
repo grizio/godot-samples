@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://tym16h72vrs2"]
+
+[ext_resource type="Script" uid="uid://dc4p7lr1ox0pl" path="res://components/brick/simple_brick/simple_brick.gd" id="1_bjqtm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awxk8"]
+size = Vector2(64, 32)
+
+[node name="Brick" type="StaticBody2D" unique_id=540850728]
+collision_layer = 4
+script = ExtResource("1_bjqtm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=124582802]
+visible = false
+shape = SubResource("RectangleShape2D_awxk8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2124540230]

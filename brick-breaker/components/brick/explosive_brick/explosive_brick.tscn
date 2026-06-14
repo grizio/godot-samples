@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dk6gjdyyx5khj"]
+
+[ext_resource type="Script" uid="uid://d251enkqwk5wj" path="res://components/brick/explosive_brick/explosive_brick.gd" id="1_er551"]
+[ext_resource type="Texture2D" uid="uid://cng3weivl76xl" path="res://components/brick/explosive_brick/explosive_brick_dangerous_1.png" id="2_f61pn"]
+[ext_resource type="Texture2D" uid="uid://w6wduscqk6wx" path="res://components/brick/explosive_brick/explosive_brick_dangerous_2.png" id="3_5e1aq"]
+[ext_resource type="Texture2D" uid="uid://cwpes711h8jn4" path="res://components/brick/explosive_brick/explosive_brick_default.png" id="4_p7g8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er551"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d5jh"]
+size = Vector2(128, 64)
+
+[sub_resource type="Animation" id="Animation_f61pn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExplosiveBrickDefault:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosiveBrickDangerous1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExplosiveBrickDangerous2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5e1aq"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExplosiveBrickDefault:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosiveBrickDangerous1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.7, 0.79999995, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExplosiveBrickDangerous2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.7, 0.79999995, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7g8t"]
+_data = {
+&"RESET": SubResource("Animation_f61pn"),
+&"explosion": SubResource("Animation_5e1aq")
+}
+
+[node name="ExplosiveBrick" type="StaticBody2D" unique_id=1724878754]
+collision_layer = 4
+script = ExtResource("1_er551")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=652556300]
+visible = false
+shape = SubResource("RectangleShape2D_er551")
+
+[node name="ExplosionArea" type="Area2D" parent="." unique_id=1383223527]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" unique_id=610307277]
+shape = SubResource("RectangleShape2D_4d5jh")
+
+[node name="ExplosiveBrickDangerous1" type="Sprite2D" parent="." unique_id=1942353844]
+texture = ExtResource("2_f61pn")
+
+[node name="ExplosiveBrickDangerous2" type="Sprite2D" parent="." unique_id=185248440]
+visible = false
+texture = ExtResource("3_5e1aq")
+
+[node name="ExplosiveBrickDefault" type="Sprite2D" parent="." unique_id=1593226212]
+visible = false
+texture = ExtResource("4_p7g8t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1191483349]
+libraries/ = SubResource("AnimationLibrary_p7g8t")

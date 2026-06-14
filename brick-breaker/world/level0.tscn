@@ -8,4 +8,4 @@ bricks = NodePath("Bricks")
 
 [node name="Bricks" parent="." index="4" unique_id=1649302324 instance=ExtResource("2_6ia15")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray(0, 0, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_map_data = PackedByteArray(0, 0, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 9, 0, 3, 0, 4, 0, 0, 0, 0, 0, 0, 0, 8, 0, 4, 0, 4, 0, 0, 0, 0, 0, 0, 0, 7, 0)

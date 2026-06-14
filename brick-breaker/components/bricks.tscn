@@ -1,18 +1,24 @@
 [gd_scene format=3 uid="uid://c18sg0gfo3e1h"]
 
-[ext_resource type="PackedScene" uid="uid://tym16h72vrs2" path="res://components/brick/simple_brick.tscn" id="1_kw0e7"]
-[ext_resource type="PackedScene" uid="uid://bcem0unca8jdu" path="res://components/brick/red_brick.tscn" id="2_mbj1x"]
-[ext_resource type="PackedScene" uid="uid://df6c7h7p1iemx" path="res://components/brick/robust_brick.tscn" id="3_mbj1x"]
+[ext_resource type="PackedScene" uid="uid://bcem0unca8jdu" path="res://components/brick/flow_brick/flow_brick.tscn" id="2_mbj1x"]
+[ext_resource type="PackedScene" uid="uid://df6c7h7p1iemx" path="res://components/brick/robust_brick/robust_brick.tscn" id="3_mbj1x"]
 [ext_resource type="Script" uid="uid://b4w2nvonj077p" path="res://components/bricks.gd" id="4_1gdq0"]
-[ext_resource type="PackedScene" uid="uid://cgxt17jpdvwba" path="res://components/brick/unbreakable_brick.tscn" id="4_aui7o"]
-[ext_resource type="PackedScene" uid="uid://dk6gjdyyx5khj" path="res://components/brick/explosive_brick.tscn" id="5_f47yy"]
+[ext_resource type="PackedScene" uid="uid://cgxt17jpdvwba" path="res://components/brick/unbreakable_brick/unbreakable_brick.tscn" id="4_aui7o"]
+[ext_resource type="PackedScene" uid="uid://dk6gjdyyx5khj" path="res://components/brick/explosive_brick/explosive_brick.tscn" id="5_f47yy"]
+[ext_resource type="PackedScene" uid="uid://dcl10ah8hb61j" path="res://components/brick/simple_brick/simple_brick_blue.tscn" id="5_ttlrp"]
+[ext_resource type="PackedScene" uid="uid://dmjk50bo4oyq0" path="res://components/brick/simple_brick/simple_brick_orange.tscn" id="6_uael7"]
+[ext_resource type="PackedScene" uid="uid://dcevcsu0umep6" path="res://components/brick/simple_brick/simple_brick_pink.tscn" id="7_hi8th"]
+[ext_resource type="PackedScene" uid="uid://dybqudfqdmhvk" path="res://components/brick/simple_brick/simple_brick_purple.tscn" id="8_xpe61"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1gdq0"]
-scenes/1/scene = ExtResource("1_kw0e7")
 scenes/2/scene = ExtResource("2_mbj1x")
 scenes/3/scene = ExtResource("3_mbj1x")
 scenes/4/scene = ExtResource("4_aui7o")
 scenes/5/scene = ExtResource("5_f47yy")
+scenes/6/scene = ExtResource("5_ttlrp")
+scenes/7/scene = ExtResource("6_uael7")
+scenes/8/scene = ExtResource("7_hi8th")
+scenes/9/scene = ExtResource("8_xpe61")
 
 [sub_resource type="TileSet" id="TileSet_r14xu"]
 tile_size = Vector2i(64, 32)

@@ -3,23 +3,29 @@ class_name Ball extends CharacterBody2D
 signal died(ball: Ball)
 
 @export var speed: float = 1000
-@export var variant: Constants.Variant = Constants.Variant.WHITE:
+@export var variant: Constants.Variant = Constants.Variant.NORMAL:
     set(value):
         variant = value
-        if hitbox != null:
-            hitbox.damage_type = value
-        if polygon != null:
-            match value:
-                Constants.Variant.RED:
-                    polygon.color = Color.RED
-                Constants.Variant.WHITE:
-                    polygon.color = Color.WHITE
+        _setup_variant()
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var fire_particles: GPUParticles2D = $FireParticles
 
 var angle: Vector2 = Vector2.ONE
+
+func _ready() -> void:
+    _setup_variant()
+
+func _setup_variant() -> void:
+    if hitbox != null:
+        hitbox.damage_type = variant
+    if polygon != null:
+        match variant:
+            Constants.Variant.FLOW:
+                polygon.color = Constants.color_light_green
+            Constants.Variant.NORMAL:
+                polygon.color = Constants.color_wheat
 
 func bounce(normal: Vector2) -> void:
     angle = angle.bounce(normal)

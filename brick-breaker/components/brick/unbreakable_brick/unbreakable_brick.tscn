@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cgxt17jpdvwba"]
+
+[ext_resource type="Script" uid="uid://b0pj7tj7dkixa" path="res://components/brick/unbreakable_brick/unbreakable_brick.gd" id="1_8jkn8"]
+[ext_resource type="Shader" uid="uid://di8x2ptnjuq5x" path="res://shaders/shine.gdshader" id="2_5bncp"]
+[ext_resource type="Texture2D" uid="uid://dw84msf8adw6w" path="res://components/brick/unbreakable_brick/unbreakable_brick.png" id="2_dfjhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrko"]
+size = Vector2(64, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6k0f"]
+resource_local_to_scene = true
+shader = ExtResource("2_5bncp")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.1
+shader_parameter/shine_angle = 45.0
+
+[node name="UnbreakableBrick" type="StaticBody2D" unique_id=883028774]
+collision_layer = 12
+collision_mask = 0
+script = ExtResource("1_8jkn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347089362]
+visible = false
+shape = SubResource("RectangleShape2D_cqrko")
+
+[node name="UnbreakableBrick" type="Sprite2D" parent="." unique_id=2049549636]
+material = SubResource("ShaderMaterial_q6k0f")
+texture = ExtResource("2_dfjhm")

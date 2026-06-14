@@ -1,7 +1,7 @@
 class_name Hitbox extends Area2D
 
 @export var damage: int = 1
-@export var damage_type: Constants.Variant = Constants.Variant.WHITE
+@export var damage_type: Constants.Variant = Constants.Variant.NORMAL
 
 func _ready() -> void:
     body_entered.connect(_on_body_entered)

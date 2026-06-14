@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://df6c7h7p1iemx"]
+
+[ext_resource type="Script" uid="uid://bd3co8tvcydpy" path="res://components/brick/robust_brick/robust_brick.gd" id="1_qoffg"]
+[ext_resource type="Texture2D" uid="uid://jy5uujp0b3gs" path="res://components/brick/robust_brick/robust_brick.png" id="2_8scrx"]
+[ext_resource type="Texture2D" uid="uid://dj8hgk37ql8e2" path="res://components/brick/robust_brick/robust_brick_break.png" id="3_akwkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebm25"]
+size = Vector2(64, 32)
+
+[node name="RobustBrick" type="StaticBody2D" unique_id=59127468]
+collision_layer = 12
+script = ExtResource("1_qoffg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977936810]
+visible = false
+shape = SubResource("RectangleShape2D_ebm25")
+
+[node name="RobustBrick" type="Sprite2D" parent="." unique_id=1542370635]
+texture = ExtResource("2_8scrx")
+
+[node name="RobustBrickBreak" type="Sprite2D" parent="." unique_id=796601577]
+visible = false
+texture = ExtResource("3_akwkh")
