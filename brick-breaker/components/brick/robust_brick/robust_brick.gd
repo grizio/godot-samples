@@ -17,9 +17,17 @@ func on_hit(damage: int, _type: Constants.Variant) -> void:
 
         await tween.finished
         queue_free()
-    elif life <= 1:
+    elif life == 1:
+        var first_tween := create_tween()
+        first_tween.tween_property(self , "modulate", Color.BLACK, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+        await first_tween.finished
+
         robust_brick_break.visible = true
         robust_brick.visible = false
+
+        var second_tween := create_tween()
+        second_tween.tween_property(self , "modulate", Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+        await second_tween.finished
     else:
         robust_brick_break.visible = false
         robust_brick.visible = true

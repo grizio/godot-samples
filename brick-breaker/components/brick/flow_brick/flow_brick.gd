@@ -1,7 +1,7 @@
 @tool
 class_name FlowBrick extends Brick
 
-@export var speed: Vector3 = Vector3.ONE
+@export var speed: Vector3 = Vector3(0, 0, 5)
 
 @onready var noise: FastNoiseLite = $Sprite2D.texture.noise
 
