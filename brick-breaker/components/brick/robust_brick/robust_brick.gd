@@ -6,7 +6,10 @@ class_name RobustBrick extends Brick
 
 var life: int = 2
 
-func on_hit(damage: int, _type: Constants.Variant) -> void:
+func on_hit(damage: int, type: Constants.Variant) -> void:
+    if type == Constants.Variant.FLOW:
+        return
+    
     life -= damage
     if life <= 0:
         collision_layer = 0

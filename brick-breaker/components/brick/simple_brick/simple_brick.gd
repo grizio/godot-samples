@@ -1,6 +1,8 @@
 class_name SimpleBrick extends Brick
 
-func on_hit(_damage: int, _type: Constants.Variant) -> void:
+func on_hit(_damage: int, type: Constants.Variant) -> void:
+    if type == Constants.Variant.FLOW:
+        return
     collision_layer = 0
 
     var tween := create_tween()

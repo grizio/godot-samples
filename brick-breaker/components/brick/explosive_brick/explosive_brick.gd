@@ -5,7 +5,9 @@ const explosion_scene: PackedScene = preload("uid://btfki0j2vu4h3")
 @onready var explosion_area: Area2D = $ExplosionArea
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func on_hit(_damage: int, _type: Constants.Variant) -> void:
+func on_hit(_damage: int, type: Constants.Variant) -> void:
+    if type == Constants.Variant.FLOW:
+        return
     animation_player.play("explosion")
 
     await animation_player.animation_finished
