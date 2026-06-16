@@ -16,9 +16,13 @@ func _ready() -> void:
     timer.wait_time = interval
     timer.timeout.connect(_on_timer_timeout)
     get_tree().get_first_node_in_group(Constants.group_level).started.connect(_on_level_started)
+    get_tree().get_first_node_in_group(Constants.group_level).stopped.connect(_on_level_stopped)
 
 func _on_level_started() -> void:
     timer.start()
+
+func _on_level_stopped() -> void:
+    timer.stop()
 
 func _on_timer_timeout() -> void:
     _next_ball()

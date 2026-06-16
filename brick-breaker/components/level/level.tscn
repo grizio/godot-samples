@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4d58m4dfxmme" path="res://components/ball_generator/ball_generator.tscn" id="4_u05ky"]
 [ext_resource type="PackedScene" uid="uid://ctfbq4t0jdwo7" path="res://components/fire_trigger/fire_trigger.tscn" id="5_qrj6a"]
 [ext_resource type="Texture2D" uid="uid://dcj2gfahd8sgr" path="res://ui/background.png" id="6_p0ugk"]
+[ext_resource type="Texture2D" uid="uid://tqrte50as06k" path="res://ui/life.png" id="7_vl4jx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e3qmh"]
 normal = Vector2(1, 0)
@@ -17,7 +18,7 @@ normal = Vector2(-1, 0)
 normal = Vector2(0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ugk"]
-size = Vector2(1975, 66)
+size = Vector2(2560, 66)
 
 [node name="Level" type="Node2D" unique_id=727468240 groups=["level"]]
 script = ExtResource("1_yqsmv")
@@ -27,14 +28,14 @@ ball_speed = 600.0
 modulate = Color(0.45581734, 0.45581734, 0.45581734, 1)
 repeat_size = Vector2(1920, 2160)
 autoscroll = Vector2(0, 10)
+metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1098265535]
 position = Vector2(960, 1080)
 texture = ExtResource("6_p0ugk")
+metadata/_edit_lock_ = true
 
 [node name="World" type="Node2D" parent="." unique_id=260065541]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Left" type="StaticBody2D" parent="World" unique_id=279966215]
 position = Vector2(0, 100)
@@ -61,7 +62,7 @@ script = ExtResource("2_explk")
 metadata/_custom_type_script = "uid://cpf34tsssw8o0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Hitbox" unique_id=1440700971]
-position = Vector2(964.5, 1120)
+position = Vector2(960, 1184)
 shape = SubResource("RectangleShape2D_p0ugk")
 
 [node name="Paddle" parent="." unique_id=13024222 instance=ExtResource("3_e3qmh")]
@@ -85,3 +86,20 @@ position = Vector2(192, 1056)
 
 [node name="FireTrigger" parent="." unique_id=977382520 instance=ExtResource("5_qrj6a")]
 position = Vector2(320, 1056)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1087793861]
+position = Vector2(960, 1120)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1753166559]
+
+[node name="Life1" type="Sprite2D" parent="CanvasLayer" unique_id=1751314991]
+position = Vector2(32, 32)
+texture = ExtResource("7_vl4jx")
+
+[node name="Life2" type="Sprite2D" parent="CanvasLayer" unique_id=1567094092]
+position = Vector2(96, 32)
+texture = ExtResource("7_vl4jx")
+
+[node name="Life3" type="Sprite2D" parent="CanvasLayer" unique_id=1514770653]
+position = Vector2(160, 32)
+texture = ExtResource("7_vl4jx")
