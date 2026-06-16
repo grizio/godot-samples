@@ -12,6 +12,7 @@ signal won()
 @onready var acceleration_timer: Timer = $AccelerationTimer
 
 var balls: Array[Ball] = []
+var was_lost: bool = false
 
 func _ready() -> void:
     bricks.total_bricks_changed.connect(_on_total_bricks_changed)
@@ -21,10 +22,11 @@ func _ready() -> void:
 func _on_ball_died(ball) -> void:
     balls.erase(ball)
     if balls.size() == 0:
+        was_lost = true
         lost.emit()
 
 func _on_total_bricks_changed(total_bricks: int) -> void:
-    if total_bricks == 0:
+    if total_bricks == 0 and not was_lost:
         won.emit()
 
 func _on_acceleration_timer_timeout() -> void:

@@ -18,7 +18,9 @@ func _on_won() -> void:
     world.visible = true
     world.enable_next()
     current_level.queue_free()
+    Data.commit()
 
 func _on_lost() -> void:
     world.visible = true
     current_level.queue_free()
+    Data.rollback()

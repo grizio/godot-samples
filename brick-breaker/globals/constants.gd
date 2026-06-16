@@ -27,3 +27,6 @@ var color_light_blue = Color.html("#29ADFF")
 var color_light_purple = Color.html("#83769C")
 var color_pink = Color.html("#FF77A8")
 var color_peach = Color.html("#FFCCAA")
+
+# powers
+const power_ball_power_up_1: String = "ball_power_up_1"

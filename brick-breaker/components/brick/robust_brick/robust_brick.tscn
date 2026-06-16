@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bd3co8tvcydpy" path="res://components/brick/robust_brick/robust_brick.gd" id="1_qoffg"]
 [ext_resource type="Texture2D" uid="uid://jy5uujp0b3gs" path="res://components/brick/robust_brick/robust_brick.png" id="2_8scrx"]
+[ext_resource type="Shader" uid="uid://di8x2ptnjuq5x" path="res://shaders/shine.gdshader" id="2_akwkh"]
 [ext_resource type="Texture2D" uid="uid://dj8hgk37ql8e2" path="res://components/brick/robust_brick/robust_brick_break.png" id="3_akwkh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebm25"]
 size = Vector2(64, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bu23h"]
+resource_local_to_scene = true
+shader = ExtResource("2_akwkh")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.1
+shader_parameter/shine_angle = 45.0
 
 [node name="RobustBrick" type="StaticBody2D" unique_id=59127468]
 collision_layer = 12
@@ -16,8 +25,10 @@ visible = false
 shape = SubResource("RectangleShape2D_ebm25")
 
 [node name="RobustBrick" type="Sprite2D" parent="." unique_id=1542370635]
+material = SubResource("ShaderMaterial_bu23h")
 texture = ExtResource("2_8scrx")
 
 [node name="RobustBrickBreak" type="Sprite2D" parent="." unique_id=796601577]
 visible = false
+material = SubResource("ShaderMaterial_bu23h")
 texture = ExtResource("3_akwkh")

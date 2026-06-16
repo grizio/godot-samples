@@ -2,8 +2,11 @@ extends Node
 
 const SAVE_FILE = "user://save.json"
 
+signal power_added(power: String)
+
 class SaveData:
     var enabled_levels: Array[String]
+    var powers: Array[String]
 
 var data: SaveData = null
 
@@ -29,6 +32,11 @@ func _load() -> void:
     data.enabled_levels = []
     for level in json.data.enabled_levels:
         data.enabled_levels.append(level)
+    
+    data.powers = []
+    if json.data.has("powers"):
+        for power in json.data.powers:
+            data.powers.append(power)
 
 func _save() -> void:
     if data == null:
@@ -36,10 +44,17 @@ func _save() -> void:
     
     var json_data = {}
     json_data["enabled_levels"] = data.enabled_levels
+    json_data["powers"] = data.powers
 
     var file = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
     file.store_string(JSON.stringify(json_data))
     file.close()
+
+func commit() -> void:
+    _save()
+
+func rollback() -> void:
+    _load()
 
 func reset() -> void:
     if not FileAccess.file_exists(SAVE_FILE):
@@ -62,3 +77,13 @@ func enable_level(level: String) -> void:
 
 func is_level_enabled(level: String) -> bool:
     return data.enabled_levels.has(level)
+
+func enable_power(power: String) -> void:
+    if data.powers.has(power):
+        return
+    
+    data.powers.append(power)
+    power_added.emit(power)
+
+func is_power_enabled(power: String) -> bool:
+    return data.powers.has(power)

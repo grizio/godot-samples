@@ -2,6 +2,10 @@ class_name Ball extends CharacterBody2D
 
 signal died(ball: Ball)
 
+@export var damage: int = 1:
+    set(value):
+        damage = value
+        _setup_damage()
 @export var speed: float = 1000
 @export var variant: Constants.Variant = Constants.Variant.NORMAL:
     set(value):
@@ -15,7 +19,16 @@ signal died(ball: Ball)
 var angle: Vector2 = Vector2.ONE
 
 func _ready() -> void:
+    if Data.is_power_enabled(Constants.power_ball_power_up_1):
+        damage += 1
+    
+    Data.power_added.connect(_on_power_added)
+    _setup_damage()
     _setup_variant()
+
+func _setup_damage() -> void:
+    if hitbox != null:
+        hitbox.damage = damage
 
 func _setup_variant() -> void:
     if hitbox != null:
@@ -26,6 +39,10 @@ func _setup_variant() -> void:
                 polygon.color = Constants.color_light_green
             Constants.Variant.NORMAL:
                 polygon.color = Constants.color_wheat
+
+func _on_power_added(power: String) -> void:
+    if power == Constants.power_ball_power_up_1:
+        damage += 1
 
 func bounce(normal: Vector2) -> void:
     angle = angle.bounce(normal)
