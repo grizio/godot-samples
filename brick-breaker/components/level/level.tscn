@@ -19,8 +19,9 @@ normal = Vector2(0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ugk"]
 size = Vector2(1975, 66)
 
-[node name="Level" type="Node2D" unique_id=727468240]
+[node name="Level" type="Node2D" unique_id=727468240 groups=["level"]]
 script = ExtResource("1_yqsmv")
+ball_speed = 600.0
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=306112970]
 modulate = Color(0.45581734, 0.45581734, 0.45581734, 1)

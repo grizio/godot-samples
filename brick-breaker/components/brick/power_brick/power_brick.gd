@@ -2,6 +2,12 @@ class_name PowerBrick extends Brick
 
 @export var power: String = ""
 
+func _ready() -> void:
+    assert(power != "", "power must be set")
+
+    if Data.is_power_enabled(power):
+        queue_free()
+
 func on_hit(_damage: int, type: Constants.Variant) -> void:
     if type == Constants.Variant.FLOW:
         return

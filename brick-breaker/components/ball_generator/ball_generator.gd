@@ -15,8 +15,10 @@ const ball_scene: PackedScene = preload("uid://bscb3hpn6rys8")
 func _ready() -> void:
     timer.wait_time = interval
     timer.timeout.connect(_on_timer_timeout)
-    await get_tree().process_frame
-    _next_ball()
+    get_tree().get_first_node_in_group(Constants.group_level).started.connect(_on_level_started)
+
+func _on_level_started() -> void:
+    timer.start()
 
 func _on_timer_timeout() -> void:
     _next_ball()

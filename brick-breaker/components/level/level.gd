@@ -1,5 +1,6 @@
 class_name Level extends Node2D
 
+signal started()
 signal lost()
 signal won()
 
@@ -18,6 +19,7 @@ func _ready() -> void:
     bricks.total_bricks_changed.connect(_on_total_bricks_changed)
     acceleration_timer.timeout.connect(_on_acceleration_timer_timeout)
     ball_generator.ball_spawned.connect(_on_ball_spawned)
+    paddle.ball_spawned.connect(_on_paddle_ball_spawned)
 
 func _on_ball_died(ball) -> void:
     balls.erase(ball)
@@ -38,3 +40,7 @@ func _on_ball_spawned(ball: Ball) -> void:
     balls.append(ball)
     ball.speed = ball_speed
     ball.died.connect(_on_ball_died)
+
+func _on_paddle_ball_spawned(ball: Ball) -> void:
+    _on_ball_spawned(ball)
+    started.emit()

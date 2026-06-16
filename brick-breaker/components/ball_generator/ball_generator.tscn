@@ -7,4 +7,3 @@ script = ExtResource("1_ct4hq")
 
 [node name="Timer" type="Timer" parent="." unique_id=2034795386]
 wait_time = 10.0
-autostart = true

@@ -4,6 +4,10 @@ class_name FireTrigger extends Node2D
 
 func _ready() -> void:
     timer.timeout.connect(_on_timeout)
+    get_tree().get_first_node_in_group(Constants.group_level).started.connect(_on_level_started)
+
+func _on_level_started() -> void:
+    timer.start()
 
 
 func _on_timeout() -> void:

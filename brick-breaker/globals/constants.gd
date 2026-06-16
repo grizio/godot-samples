@@ -30,3 +30,7 @@ var color_peach = Color.html("#FFCCAA")
 
 # powers
 const power_ball_power_up_1: String = "ball_power_up_1"
+
+# groups
+const group_level: String = "level"
+const group_ball: String = "ball"

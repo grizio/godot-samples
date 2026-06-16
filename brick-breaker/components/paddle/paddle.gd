@@ -1,5 +1,7 @@
 class_name Paddle extends CharacterBody2D
 
+signal ball_spawned(ball: Ball)
+
 @export var speed: float = 300
 @export var max_speed: float = 300
 @export var variant: Constants.Variant = Constants.Variant.NORMAL:
@@ -9,11 +11,15 @@ class_name Paddle extends CharacterBody2D
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var shape: CapsuleShape2D = $CollisionShape2D.shape as CapsuleShape2D
+@onready var initial_ball: Ball = $Ball
 
 var target_x: float = INF
 
 func _ready() -> void:
     _setup_variant()
+    var max_shift = (shape.height * 0.8) / 2
+    initial_ball.position.x = randf_range(-max_shift, max_shift)
+    initial_ball.speed = 0
 
 func _setup_variant() -> void:
     if polygon == null:
@@ -36,6 +42,13 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
         target_x = event.global_position.x
+    elif event.is_action_pressed(Inputs.launch) and initial_ball != null:
+        var current_ball_position = initial_ball.global_position
+        remove_child(initial_ball)
+        get_tree().get_first_node_in_group(Constants.group_level).add_child(initial_ball)
+        initial_ball.global_position = current_ball_position
+        ball_spawned.emit(initial_ball)
+        initial_ball = null
     elif event.is_action_pressed(Inputs.change_variant):
         variant = (variant + 1) % Constants.Variant.size() as Constants.Variant
     elif event.is_action_pressed(Inputs.left) or event.is_action_pressed(Inputs.right):
