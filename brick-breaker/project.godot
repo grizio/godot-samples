@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Constants="*uid://uldo43aipsf"
 Inputs="*uid://bv1ue5boaknfu"
+Data="*uid://m1u5ff0lqkh5"
 
 [display]
 

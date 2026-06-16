@@ -4,6 +4,7 @@ class_name WorldItem extends Button
 signal item_focused(item: WorldItem)
 signal item_pressed(item: WorldItem)
 
+@export var id: String = ""
 @export var scene: PackedScene
 @export var label: String = "":
     set(value):
@@ -19,6 +20,9 @@ func _ready() -> void:
     text = label
     pressed.connect(_on_pressed)
     focus_entered.connect(_on_focus_entered)
+
+    assert(id != "", "id must be set")
+    disabled = not Data.is_level_enabled(id)
 
 func _on_pressed() -> void:
     item_pressed.emit(self )
@@ -44,12 +48,16 @@ func _input(event: InputEvent) -> void:
         if down != null && not down.disabled:
             down.grab_focus()
 
+func enable() -> void:
+    disabled = false
+    Data.enable_level(id)
+
 func enable_next() -> void:
     if left != null:
-        left.disabled = false
+        left.enable()
     if right != null:
-        right.disabled = false
+        right.enable()
     if up != null:
-        up.disabled = false
+        up.enable()
     if down != null:
-        down.disabled = false
+        down.enable()

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="2_bcrbt"]
 [ext_resource type="Texture2D" uid="uid://dekqni4shkjok" path="res://ui/world-background.png" id="2_rk7fn"]
 [ext_resource type="PackedScene" uid="uid://dfucnvshqc0ha" path="res://world/level1.tscn" id="3_wuxkr"]
+[ext_resource type="PackedScene" uid="uid://ceplp1vbyv88y" path="res://world/world/hud.tscn" id="6_j28bi"]
 
 [node name="World" type="Node2D" unique_id=804923594]
 script = ExtResource("1_1tbfg")
@@ -25,6 +26,7 @@ offset_top = 929.0
 offset_right = 1044.0
 offset_bottom = 982.0
 text = "Tuto"
+id = "tuto"
 scene = ExtResource("2_bcrbt")
 label = "Tuto"
 up = NodePath("../First")
@@ -36,9 +38,12 @@ offset_right = 1039.0
 offset_bottom = 864.0
 disabled = true
 text = "First"
+id = "first"
 scene = ExtResource("3_wuxkr")
 label = "First"
 down = NodePath("../Tuto")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2114130209]
 position_smoothing_enabled = true
+
+[node name="Hud" parent="." unique_id=1782128396 instance=ExtResource("6_j28bi")]
