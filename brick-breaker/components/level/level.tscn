@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="3_e3qmh"]
 [ext_resource type="PackedScene" uid="uid://c4d58m4dfxmme" path="res://components/ball_generator/ball_generator.tscn" id="4_u05ky"]
 [ext_resource type="PackedScene" uid="uid://ctfbq4t0jdwo7" path="res://components/fire_trigger/fire_trigger.tscn" id="5_qrj6a"]
+[ext_resource type="Texture2D" uid="uid://dcj2gfahd8sgr" path="res://ui/background.png" id="6_p0ugk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e3qmh"]
 normal = Vector2(1, 0)
@@ -20,6 +21,15 @@ size = Vector2(1975, 66)
 
 [node name="Level" type="Node2D" unique_id=727468240]
 script = ExtResource("1_yqsmv")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=306112970]
+modulate = Color(0.45581734, 0.45581734, 0.45581734, 1)
+repeat_size = Vector2(1920, 2160)
+autoscroll = Vector2(0, 10)
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1098265535]
+position = Vector2(960, 1080)
+texture = ExtResource("6_p0ugk")
 
 [node name="World" type="Node2D" parent="." unique_id=260065541]
 metadata/_edit_lock_ = true

@@ -3,31 +3,38 @@
 [ext_resource type="Script" uid="uid://ww24u8vcw0uc" path="res://world/world/world.gd" id="1_1tbfg"]
 [ext_resource type="PackedScene" uid="uid://bnscgobeq8sgd" path="res://world/world/world_item.tscn" id="1_jxir3"]
 [ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="2_bcrbt"]
+[ext_resource type="Texture2D" uid="uid://dekqni4shkjok" path="res://ui/world-background.png" id="2_rk7fn"]
 [ext_resource type="PackedScene" uid="uid://dfucnvshqc0ha" path="res://world/level1.tscn" id="3_wuxkr"]
 
 [node name="World" type="Node2D" unique_id=804923594]
 script = ExtResource("1_1tbfg")
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1201319727]
+repeat_size = Vector2(3840, 2160)
+
+[node name="WorldBackground" type="Sprite2D" parent="Parallax2D" unique_id=1541398814]
+texture = ExtResource("2_rk7fn")
+
 [node name="Line2D" type="Line2D" parent="." unique_id=943379471]
 points = PackedVector2Array(1001, 930, 1020, 907, 997, 893, 997, 862)
 width = 2.0
-default_color = Color(0, 0, 0, 1)
 
 [node name="Tuto" parent="." unique_id=47026659 node_paths=PackedStringArray("up") instance=ExtResource("1_jxir3")]
-offset_left = 980.0
-offset_top = 924.0
-offset_right = 1024.0
-offset_bottom = 955.0
+offset_left = 965.0
+offset_top = 929.0
+offset_right = 1044.0
+offset_bottom = 982.0
 text = "Tuto"
 scene = ExtResource("2_bcrbt")
 label = "Tuto"
 up = NodePath("../First")
 
 [node name="First" parent="." unique_id=1624952315 node_paths=PackedStringArray("down") instance=ExtResource("1_jxir3")]
-offset_left = 980.0
-offset_top = 843.0
-offset_right = 1023.0
-offset_bottom = 874.0
+offset_left = 963.0
+offset_top = 811.0
+offset_right = 1039.0
+offset_bottom = 864.0
+disabled = true
 text = "First"
 scene = ExtResource("3_wuxkr")
 label = "First"
