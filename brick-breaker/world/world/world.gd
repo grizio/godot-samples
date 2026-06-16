@@ -3,6 +3,7 @@ class_name World extends Node2D
 signal scene_selected(scene: PackedScene)
 
 @onready var camera: Camera2D = $Camera2D
+@onready var hud: CanvasLayer = $Hud
 
 var selected_item: WorldItem
 
@@ -31,6 +32,8 @@ func _on_visibility_changed() -> void:
                 return
     else:
         camera.enabled = false
+    
+    hud.visible = visible
 
 func enable_next() -> void:
     selected_item.enable_next()
