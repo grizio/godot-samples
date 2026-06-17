@@ -7,25 +7,35 @@ const ball_scene: PackedScene = preload("uid://bscb3hpn6rys8")
 @export_range(0, 60, 1, "suffix: s") var interval: float = 10:
     set(value):
         interval = value
-        if timer != null:
-            timer.wait_time = value
+        _setup()
 
 @onready var timer: Timer = $Timer
+@onready var processing_animation_player: AnimationPlayer = $ProcessingAnimationPlayer
 
 func _ready() -> void:
-    timer.wait_time = interval
+    _setup()
     timer.timeout.connect(_on_timer_timeout)
     get_tree().get_first_node_in_group(Constants.group_level).started.connect(_on_level_started)
     get_tree().get_first_node_in_group(Constants.group_level).stopped.connect(_on_level_stopped)
 
+func _setup() -> void:
+    if timer != null:
+        timer.wait_time = interval
+    if processing_animation_player != null:
+        processing_animation_player.speed_scale = 1 / interval
+
 func _on_level_started() -> void:
     timer.start()
+    processing_animation_player.play("process")
 
 func _on_level_stopped() -> void:
     timer.stop()
+    processing_animation_player.stop()
 
 func _on_timer_timeout() -> void:
     _next_ball()
+    processing_animation_player.stop()
+    processing_animation_player.play("process")
 
 func _next_ball() -> void:
     var ball: Ball = ball_scene.instantiate()

@@ -82,7 +82,7 @@ autostart = true
 position = Vector2(960, 544)
 
 [node name="BallGenerator" parent="." unique_id=1475901960 instance=ExtResource("4_u05ky")]
-position = Vector2(192, 1056)
+position = Vector2(160, 1088)
 
 [node name="FireTrigger" parent="." unique_id=977382520 instance=ExtResource("5_qrj6a")]
 position = Vector2(320, 1056)
