@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dfucnvshqc0ha" path="res://world/level1.tscn" id="3_wuxkr"]
 [ext_resource type="PackedScene" uid="uid://b3tq4ul4pa3d1" path="res://world/level_ball_power_up_1.tscn" id="6_4e2ep"]
 [ext_resource type="PackedScene" uid="uid://ceplp1vbyv88y" path="res://world/world/hud.tscn" id="6_j28bi"]
+[ext_resource type="PackedScene" uid="uid://dp7iluplsbt7t" path="res://world/level_ball_generator.tscn" id="7_i0vah"]
 
 [node name="World" type="Node2D" unique_id=804923594]
 script = ExtResource("1_1tbfg")
@@ -24,6 +25,11 @@ width = 2.0
 [node name="Line2D2" type="Line2D" parent="." unique_id=345156889]
 position = Vector2(-32, 0)
 points = PackedVector2Array(1024, 672, 1056, 768, 1024, 736, 1056, 832)
+width = 2.0
+
+[node name="Line2D3" type="Line2D" parent="." unique_id=1066696087]
+position = Vector2(-32, 0)
+points = PackedVector2Array(1280, 832, 1184, 800, 1152, 864, 1056, 832)
 width = 2.0
 
 [node name="Tuto" parent="." unique_id=47026659 node_paths=PackedStringArray("up") instance=ExtResource("1_jxir3")]
@@ -49,7 +55,7 @@ scene = ExtResource("3_wuxkr")
 label = "First"
 down = NodePath("../Power1")
 
-[node name="Power1" parent="." unique_id=1156866306 node_paths=PackedStringArray("up", "down") instance=ExtResource("1_jxir3")]
+[node name="Power1" parent="." unique_id=1156866306 node_paths=PackedStringArray("up", "right", "down") instance=ExtResource("1_jxir3")]
 offset_left = 960.0
 offset_top = 800.0
 offset_right = 1066.0
@@ -60,7 +66,20 @@ id = "power_1"
 scene = ExtResource("6_4e2ep")
 label = "Power"
 up = NodePath("../First")
+right = NodePath("../PowerBallGenerator")
 down = NodePath("../Tuto")
+
+[node name="PowerBallGenerator" parent="." unique_id=321733612 node_paths=PackedStringArray("left") instance=ExtResource("1_jxir3")]
+offset_left = 1216.0
+offset_top = 800.0
+offset_right = 1322.0
+offset_bottom = 853.0
+disabled = true
+text = "BallGen"
+id = "power_ball_generator"
+scene = ExtResource("7_i0vah")
+label = "BallGen"
+left = NodePath("../Power1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2114130209]
 position_smoothing_enabled = true
