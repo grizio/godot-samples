@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ceplp1vbyv88y" path="res://world/world/hud.tscn" id="6_j28bi"]
 [ext_resource type="PackedScene" uid="uid://dp7iluplsbt7t" path="res://world/level_ball_generator.tscn" id="7_i0vah"]
 [ext_resource type="PackedScene" uid="uid://d2kx4ga61gqsv" path="res://world/level_fire.tscn" id="8_csdlw"]
+[ext_resource type="PackedScene" uid="uid://bfc676j4ephyb" path="res://world/level_flow.tscn" id="9_0ist6"]
 
 [node name="World" type="Node2D" unique_id=804923594]
 script = ExtResource("1_1tbfg")
@@ -41,6 +42,10 @@ width = 2.0
 points = PackedVector2Array(1248, 672, 1280, 736, 1280, 800)
 width = 2.0
 
+[node name="Line2D6" type="Line2D" parent="." unique_id=1834878945]
+points = PackedVector2Array(768, 672, 832, 672, 960, 640)
+width = 2.0
+
 [node name="Tuto" parent="." unique_id=47026659 node_paths=PackedStringArray("up") instance=ExtResource("1_jxir3")]
 offset_left = 960.0
 offset_top = 928.0
@@ -52,7 +57,7 @@ scene = ExtResource("2_bcrbt")
 label = "Tuto"
 up = NodePath("../Power1")
 
-[node name="First" parent="." unique_id=1624952315 node_paths=PackedStringArray("right", "down") instance=ExtResource("1_jxir3")]
+[node name="First" parent="." unique_id=1624952315 node_paths=PackedStringArray("left", "right", "down") instance=ExtResource("1_jxir3")]
 offset_left = 960.0
 offset_top = 640.0
 offset_right = 1036.0
@@ -62,6 +67,7 @@ text = "First"
 id = "first"
 scene = ExtResource("3_wuxkr")
 label = "First"
+left = NodePath("../PowerFlow")
 right = NodePath("../PowerFire")
 down = NodePath("../Power1")
 
@@ -104,6 +110,18 @@ scene = ExtResource("8_csdlw")
 label = "Fire"
 left = NodePath("../First")
 down = NodePath("../PowerBallGenerator")
+
+[node name="PowerFlow" parent="." unique_id=832967189 node_paths=PackedStringArray("right") instance=ExtResource("1_jxir3")]
+offset_left = 704.0
+offset_top = 640.0
+offset_right = 810.0
+offset_bottom = 693.0
+disabled = true
+text = "Flow"
+id = "power_flow"
+scene = ExtResource("9_0ist6")
+label = "Flow"
+right = NodePath("../First")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2114130209]
 position_smoothing_enabled = true

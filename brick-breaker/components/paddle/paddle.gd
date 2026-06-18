@@ -14,12 +14,20 @@ signal ball_spawned(ball: Ball)
 @onready var initial_ball: Ball = $Ball
 
 var target_x: float = INF
+var can_flow: bool = false
 
 func _ready() -> void:
     _setup_variant()
     var max_shift = (shape.height * 0.8) / 2
     initial_ball.position.x = randf_range(-max_shift, max_shift)
     initial_ball.speed = 0
+    can_flow = Data.is_power_enabled(Constants.power_flow)
+    Data.power_added.connect(_on_power_added)
+
+func _on_power_added(power: String) -> void:
+    if power == Constants.power_flow:
+        can_flow = true
+        variant = Constants.Variant.FLOW
 
 func _setup_variant() -> void:
     if polygon == null:
@@ -50,7 +58,8 @@ func _unhandled_input(event: InputEvent) -> void:
         ball_spawned.emit(initial_ball)
         initial_ball = null
     elif event.is_action_pressed(Inputs.change_variant):
-        variant = (variant + 1) % Constants.Variant.size() as Constants.Variant
+        if can_flow:
+            variant = (variant + 1) % Constants.Variant.size() as Constants.Variant
     elif event.is_action_pressed(Inputs.left) or event.is_action_pressed(Inputs.right):
         target_x = INF
 
