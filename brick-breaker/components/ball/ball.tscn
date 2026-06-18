@@ -16,7 +16,47 @@ fill_to = Vector2(0, 0)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_usys6"]
 particle_flag_disable_z = true
-gravity = Vector3(0, 100, 0)
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -10.000002
+radial_accel_max = 9.999997
+
+[sub_resource type="Gradient" id="Gradient_w6j5n"]
+offsets = PackedFloat32Array(0, 0.96202534, 1)
+colors = PackedColorArray(1, 0.94509804, 0.9098039, 1, 1, 0.94509804, 0.9098039, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqdgg"]
+gradient = SubResource("Gradient_w6j5n")
+width = 22
+height = 22
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_rinto"]
+offsets = PackedFloat32Array(0, 0.96202534, 1)
+colors = PackedColorArray(0, 0.5294118, 0.31764707, 1, 0, 0.89411765, 0.21176471, 1, 0, 0.89411765, 0.21176471, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wwidm"]
+gradient = SubResource("Gradient_rinto")
+width = 22
+height = 22
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_iqdgg"]
+offsets = PackedFloat32Array(0, 0.62025315, 0.96202534, 1)
+colors = PackedColorArray(1, 0.6392157, 0, 1, 1, 0.6392157, 0, 1, 1, 0.9254902, 0.15294118, 1, 1, 0.9254902, 0.15294118, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rinto"]
+gradient = SubResource("Gradient_iqdgg")
+width = 22
+height = 22
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x8fbi"]
 
@@ -30,13 +70,23 @@ script = ExtResource("1_x8fbi")
 
 [node name="FireParticles" type="GPUParticles2D" parent="." unique_id=1342024297]
 emitting = false
+amount = 32
 texture = SubResource("GradientTexture2D_w6j5n")
+lifetime = 0.25
 trail_enabled = true
-trail_lifetime = 1.0
+trail_lifetime = 0.25
 process_material = SubResource("ParticleProcessMaterial_usys6")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=828157798]
-polygon = PackedVector2Array(-7, -7, 0, -10, 7, -7, 10, 0, 7, 7, 0, 10, -7, 7, -10, 0)
+[node name="BallSprite" type="Sprite2D" parent="." unique_id=1911225523]
+texture = SubResource("GradientTexture2D_iqdgg")
+
+[node name="FlowSprite" type="Sprite2D" parent="." unique_id=421045183]
+visible = false
+texture = SubResource("GradientTexture2D_wwidm")
+
+[node name="FireSprite" type="Sprite2D" parent="." unique_id=1627189051]
+visible = false
+texture = SubResource("GradientTexture2D_rinto")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1424078609]
 shape = SubResource("CircleShape2D_x8fbi")

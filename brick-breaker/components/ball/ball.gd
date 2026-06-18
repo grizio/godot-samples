@@ -12,8 +12,10 @@ signal died(ball: Ball)
         variant = value
         _setup_variant()
 
-@onready var polygon: Polygon2D = $Polygon2D
 @onready var hitbox: Hitbox = $Hitbox
+@onready var ball_sprite: Sprite2D = $BallSprite
+@onready var flow_sprite: Sprite2D = $FlowSprite
+@onready var fire_sprite: Sprite2D = $FireSprite
 @onready var fire_particles: GPUParticles2D = $FireParticles
 
 var angle: Vector2 = Vector2.ONE
@@ -33,12 +35,14 @@ func _setup_damage() -> void:
 func _setup_variant() -> void:
     if hitbox != null:
         hitbox.damage_type = variant
-    if polygon != null:
+    if flow_sprite != null and ball_sprite != null:
         match variant:
             Constants.Variant.FLOW:
-                polygon.color = Constants.color_light_green
+                flow_sprite.visible = true
+                ball_sprite.visible = false
             Constants.Variant.NORMAL:
-                polygon.color = Constants.color_wheat
+                flow_sprite.visible = false
+                ball_sprite.visible = true
 
 func _on_power_added(power: String) -> void:
     if power == Constants.power_ball_power_up_1:
@@ -67,8 +71,10 @@ func trigger_fire(duration: float) -> void:
         return
     
     fire_particles.emitting = true
+    fire_sprite.visible = true
     set_collision_mask_value(Constants.collision_brick, false)
 
     await get_tree().create_timer(duration).timeout
     set_collision_mask_value(Constants.collision_brick, true)
+    fire_sprite.visible = false
     fire_particles.emitting = false
