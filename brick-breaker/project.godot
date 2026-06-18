@@ -71,6 +71,7 @@ launch={
 2d_physics/layer_2="ball"
 2d_physics/layer_3="brick"
 2d_physics/layer_4="brick_solid"
+2d_physics/layer_5="modifier"
 
 [physics]
 

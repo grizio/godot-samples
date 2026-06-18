@@ -1,9 +1,15 @@
 class_name Paddle extends CharacterBody2D
 
+const initial_width: float = 256
+
 signal ball_spawned(ball: Ball)
 
 @export var speed: float = 300
 @export var max_speed: float = 300
+@export var width: float = initial_width:
+    set(value):
+        width = value
+        _setup_width()
 @export var variant: Constants.Variant = Constants.Variant.NORMAL:
     set(value):
         variant = value
@@ -12,17 +18,20 @@ signal ball_spawned(ball: Ball)
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var shape: CapsuleShape2D = $CollisionShape2D.shape as CapsuleShape2D
 @onready var initial_ball: Ball = $Ball
+@onready var modifier_area: Area2D = $ModifierArea
 
 var target_x: float = INF
 var can_flow: bool = false
 
 func _ready() -> void:
+    _setup_width()
     _setup_variant()
     var max_shift = (shape.height * 0.8) / 2
     initial_ball.position.x = randf_range(-max_shift, max_shift)
     initial_ball.speed = 0
     can_flow = Data.is_power_enabled(Constants.power_flow)
     Data.power_added.connect(_on_power_added)
+    modifier_area.body_entered.connect(_on_modifier_entered)
 
 func _on_power_added(power: String) -> void:
     if power == Constants.power_flow:
@@ -37,6 +46,30 @@ func _setup_variant() -> void:
             polygon.color = Constants.color_light_green
         Constants.Variant.NORMAL:
             polygon.color = Constants.color_wheat
+
+func _setup_width() -> void:
+    if polygon == null:
+        return
+    
+    print("setup width", width)
+    polygon.polygon = [
+        Vector2(- (width / 2 - 8), -8),
+        Vector2(width / 2 - 8, -8),
+        Vector2(width / 2 - 4, -7),
+        Vector2(width / 2 - 1, -4),
+        Vector2(width / 2, 0),
+        Vector2(width / 2 - 1, 4),
+        Vector2(width / 2 - 4, 7),
+        Vector2(width / 2 - 8, 8),
+        Vector2(- (width / 2 - 8), 8),
+        Vector2(- (width / 2 - 4), 7),
+        Vector2(- (width / 2 - 1), 4),
+        Vector2(- (width / 2), 0),
+        Vector2(- (width / 2 - 1), -4),
+        Vector2(- (width / 2 - 4), -7),
+    ]
+    shape.height = width
+    
 
 func _physics_process(delta: float) -> void:
     if Input.is_action_pressed(Inputs.left):
@@ -65,9 +98,18 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func on_ball_collision(ball: Ball) -> void:
     var distance_from_center = abs(ball.global_position.x - global_position.x)
-    var max_distance = shape.height / 2
+    var max_distance = width / 2
     
     var x = distance_from_center * 4 / max_distance
 
     ball.set_direction(Vector2(x * sign(ball.global_position.x - global_position.x), -1).normalized())
     ball.variant = variant
+
+func _on_modifier_entered(modifier: Modifier) -> void:
+    match modifier.action:
+        Constants.modifier_grow:
+            width *= 1.25
+        Constants.modifier_shrink:
+            width *= 0.75
+    
+    modifier.queue_free()

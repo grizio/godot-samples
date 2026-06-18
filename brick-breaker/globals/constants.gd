@@ -37,3 +37,7 @@ const power_flow: String = "flow"
 # groups
 const group_level: String = "level"
 const group_ball: String = "ball"
+
+# modifiers
+const modifier_grow: String = "grow"
+const modifier_shrink: String = "shrink"
