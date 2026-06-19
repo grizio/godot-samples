@@ -8,6 +8,8 @@ signal scene_selected(scene: PackedScene)
 var selected_item: WorldItem
 
 func _ready() -> void:
+    _setup_navigation()
+
     for child in get_children():
         if child is WorldItem:
             child.item_focused.connect(_on_item_focused)
@@ -36,4 +38,25 @@ func _on_visibility_changed() -> void:
     hud.visible = visible
 
 func enable_next() -> void:
-    selected_item.enable_next()
+    selected_item.won()
+
+func _setup_navigation() -> void:
+    var map: Dictionary = {}
+    for child in get_children():
+        if child is WorldItem:
+            map[child.global_position] = child
+    
+    for child in get_children():
+        if child is WorldItem:
+            var pos = child.global_position
+            if map.has(pos + Vector2(0, -128)):
+                child.up = map[pos + Vector2(0, -128)]
+            
+            if map.has(pos + Vector2(0, 128)):
+                child.down = map[pos + Vector2(0, 128)]
+            
+            if map.has(pos + Vector2(-128, 0)):
+                child.left = map[pos + Vector2(-128, 0)]
+            
+            if map.has(pos + Vector2(128, 0)):
+                child.right = map[pos + Vector2(128, 0)]

@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ww24u8vcw0uc" path="res://world/world/world.gd" id="1_1tbfg"]
 [ext_resource type="PackedScene" uid="uid://bnscgobeq8sgd" path="res://world/world/world_item.tscn" id="1_jxir3"]
-[ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="2_bcrbt"]
 [ext_resource type="Texture2D" uid="uid://dekqni4shkjok" path="res://ui/world-background.png" id="2_rk7fn"]
-[ext_resource type="PackedScene" uid="uid://dfucnvshqc0ha" path="res://world/level1.tscn" id="3_wuxkr"]
-[ext_resource type="PackedScene" uid="uid://b3tq4ul4pa3d1" path="res://world/level_ball_power_up_1.tscn" id="6_4e2ep"]
+[ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="4_csdlw"]
+[ext_resource type="PackedScene" uid="uid://b3tq4ul4pa3d1" path="res://world/level_ball_power_up_1.tscn" id="5_0ist6"]
 [ext_resource type="PackedScene" uid="uid://ceplp1vbyv88y" path="res://world/world/hud.tscn" id="6_j28bi"]
-[ext_resource type="PackedScene" uid="uid://dp7iluplsbt7t" path="res://world/level_ball_generator.tscn" id="7_i0vah"]
-[ext_resource type="PackedScene" uid="uid://d2kx4ga61gqsv" path="res://world/level_fire.tscn" id="8_csdlw"]
-[ext_resource type="PackedScene" uid="uid://bfc676j4ephyb" path="res://world/level_flow.tscn" id="9_0ist6"]
+[ext_resource type="PackedScene" uid="uid://dp7iluplsbt7t" path="res://world/level_ball_generator.tscn" id="6_qnlc3"]
+[ext_resource type="PackedScene" uid="uid://d2kx4ga61gqsv" path="res://world/level_fire.tscn" id="7_dikho"]
+[ext_resource type="PackedScene" uid="uid://bfc676j4ephyb" path="res://world/level_flow.tscn" id="8_igqxp"]
 
 [node name="World" type="Node2D" unique_id=804923594]
 script = ExtResource("1_1tbfg")
@@ -20,108 +19,52 @@ repeat_size = Vector2(3840, 2160)
 [node name="WorldBackground" type="Sprite2D" parent="Parallax2D" unique_id=1541398814]
 texture = ExtResource("2_rk7fn")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=943379471]
-points = PackedVector2Array(1001, 930, 1020, 907, 997, 893, 997, 862)
-width = 2.0
-
-[node name="Line2D2" type="Line2D" parent="." unique_id=345156889]
-position = Vector2(-32, 0)
-points = PackedVector2Array(1024, 672, 1056, 768, 1024, 736, 1056, 832)
-width = 2.0
-
-[node name="Line2D3" type="Line2D" parent="." unique_id=1066696087]
-position = Vector2(-32, 0)
-points = PackedVector2Array(1280, 832, 1184, 800, 1152, 864, 1056, 832)
-width = 2.0
-
-[node name="Line2D4" type="Line2D" parent="." unique_id=306107167]
-points = PackedVector2Array(1024, 672, 1088, 640, 1152, 704, 1248, 672)
-width = 2.0
-
-[node name="Line2D5" type="Line2D" parent="." unique_id=2066123247]
-points = PackedVector2Array(1248, 672, 1280, 736, 1280, 800)
-width = 2.0
-
-[node name="Line2D6" type="Line2D" parent="." unique_id=1834878945]
-points = PackedVector2Array(768, 672, 832, 672, 960, 640)
-width = 2.0
-
-[node name="Tuto" parent="." unique_id=47026659 node_paths=PackedStringArray("up") instance=ExtResource("1_jxir3")]
-offset_left = 960.0
-offset_top = 928.0
-offset_right = 1039.0
-offset_bottom = 981.0
-text = "Tuto"
-id = "tuto"
-scene = ExtResource("2_bcrbt")
-label = "Tuto"
-up = NodePath("../Power1")
-
-[node name="First" parent="." unique_id=1624952315 node_paths=PackedStringArray("left", "right", "down") instance=ExtResource("1_jxir3")]
-offset_left = 960.0
+[node name="Tuto" parent="." unique_id=47026659 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
 offset_top = 640.0
-offset_right = 1036.0
-offset_bottom = 693.0
-disabled = true
-text = "First"
-id = "first"
-scene = ExtResource("3_wuxkr")
-label = "First"
-left = NodePath("../PowerFlow")
-right = NodePath("../PowerFire")
-down = NodePath("../Power1")
+offset_right = 1024.0
+offset_bottom = 768.0
+scene = ExtResource("4_csdlw")
 
-[node name="Power1" parent="." unique_id=1156866306 node_paths=PackedStringArray("up", "right", "down") instance=ExtResource("1_jxir3")]
-offset_left = 960.0
-offset_top = 800.0
-offset_right = 1066.0
-offset_bottom = 853.0
+[node name="First" parent="." unique_id=1624952315 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
+offset_top = 384.0
+offset_right = 1024.0
+offset_bottom = 512.0
 disabled = true
-text = "Power"
-id = "power_1"
-scene = ExtResource("6_4e2ep")
-label = "Power"
-up = NodePath("../First")
-right = NodePath("../PowerBallGenerator")
-down = NodePath("../Tuto")
+scene = ExtResource("4_csdlw")
 
-[node name="PowerBallGenerator" parent="." unique_id=321733612 node_paths=PackedStringArray("up", "left") instance=ExtResource("1_jxir3")]
-offset_left = 1216.0
-offset_top = 800.0
-offset_right = 1322.0
-offset_bottom = 853.0
+[node name="Power1" parent="." unique_id=1156866306 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
+offset_top = 512.0
+offset_right = 1024.0
+offset_bottom = 640.0
 disabled = true
-text = "BallGen"
-id = "power_ball_generator"
-scene = ExtResource("7_i0vah")
-label = "BallGen"
-up = NodePath("../PowerFire")
-left = NodePath("../Power1")
+scene = ExtResource("5_0ist6")
 
-[node name="PowerFire" parent="." unique_id=1780674309 node_paths=PackedStringArray("left", "down") instance=ExtResource("1_jxir3")]
-offset_left = 1216.0
-offset_top = 640.0
-offset_right = 1322.0
-offset_bottom = 693.0
+[node name="PowerBallGenerator" parent="." unique_id=321733612 instance=ExtResource("1_jxir3")]
+offset_left = 1024.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 640.0
 disabled = true
-text = "Fire"
-id = "power_fire"
-scene = ExtResource("8_csdlw")
-label = "Fire"
-left = NodePath("../First")
-down = NodePath("../PowerBallGenerator")
+scene = ExtResource("6_qnlc3")
 
-[node name="PowerFlow" parent="." unique_id=832967189 node_paths=PackedStringArray("right") instance=ExtResource("1_jxir3")]
-offset_left = 704.0
-offset_top = 640.0
-offset_right = 810.0
-offset_bottom = 693.0
+[node name="PowerFire" parent="." unique_id=1780674309 instance=ExtResource("1_jxir3")]
+offset_left = 1024.0
+offset_top = 384.0
+offset_right = 1152.0
+offset_bottom = 512.0
 disabled = true
-text = "Flow"
-id = "power_flow"
-scene = ExtResource("9_0ist6")
-label = "Flow"
-right = NodePath("../First")
+scene = ExtResource("7_dikho")
+
+[node name="PowerFlow" parent="." unique_id=832967189 instance=ExtResource("1_jxir3")]
+offset_left = 768.0
+offset_top = 384.0
+offset_right = 896.0
+offset_bottom = 512.0
+disabled = true
+scene = ExtResource("8_igqxp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2114130209]
 position_smoothing_enabled = true

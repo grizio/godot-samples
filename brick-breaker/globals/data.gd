@@ -6,6 +6,7 @@ signal power_added(power: String)
 
 class SaveData:
     var enabled_levels: Array[String]
+    var won_levels: Array[String]
     var powers: Array[String]
 
 var data: SaveData = null
@@ -33,6 +34,10 @@ func _load() -> void:
     for level in json.data.enabled_levels:
         data.enabled_levels.append(level)
     
+    data.won_levels = []
+    for level in json.data.won_levels:
+        data.won_levels.append(level)
+    
     data.powers = []
     if json.data.has("powers"):
         for power in json.data.powers:
@@ -44,6 +49,7 @@ func _save() -> void:
     
     var json_data = {}
     json_data["enabled_levels"] = data.enabled_levels
+    json_data["won_levels"] = data.won_levels
     json_data["powers"] = data.powers
 
     var file = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
@@ -65,7 +71,7 @@ func reset() -> void:
 
 func _create_empty_data() -> SaveData:
     data = SaveData.new()
-    data.enabled_levels = ["tuto"]
+    data.enabled_levels = ["Tuto"]
     return data
 
 func enable_level(level: String) -> void:
@@ -77,6 +83,16 @@ func enable_level(level: String) -> void:
 
 func is_level_enabled(level: String) -> bool:
     return data.enabled_levels.has(level)
+
+func won_level(level: String) -> void:
+    if data.won_levels.has(level):
+        return
+    
+    data.won_levels.append(level)
+    _save()
+
+func is_level_won(level: String) -> bool:
+    return data.won_levels.has(level)
 
 func enable_power(power: String) -> void:
     if data.powers.has(power):
