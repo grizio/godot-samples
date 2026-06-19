@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://f8727crsjv6d" path="res://components/level/level.gd" id="1_yqsmv"]
 [ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="2_explk"]
 [ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="3_e3qmh"]
+[ext_resource type="PackedScene" uid="uid://c18sg0gfo3e1h" path="res://components/bricks.tscn" id="4_7in7u"]
 [ext_resource type="PackedScene" uid="uid://c4d58m4dfxmme" path="res://components/ball_generator/ball_generator.tscn" id="4_u05ky"]
 [ext_resource type="PackedScene" uid="uid://ctfbq4t0jdwo7" path="res://components/fire_trigger/fire_trigger.tscn" id="5_qrj6a"]
 [ext_resource type="Texture2D" uid="uid://dcj2gfahd8sgr" path="res://ui/background.png" id="6_p0ugk"]
@@ -64,6 +65,8 @@ metadata/_custom_type_script = "uid://cpf34tsssw8o0"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Hitbox" unique_id=1440700971]
 position = Vector2(960, 1184)
 shape = SubResource("RectangleShape2D_p0ugk")
+
+[node name="Bricks" parent="." unique_id=1649302324 instance=ExtResource("4_7in7u")]
 
 [node name="Paddle" parent="." unique_id=13024222 instance=ExtResource("3_e3qmh")]
 unique_name_in_owner = true

@@ -7,10 +7,10 @@ signal stopped()
 signal lost()
 signal won()
 
-@export var bricks: Bricks
 @export_range(0, 2000, 1, "suffix: px/s") var ball_speed: float = 400
 @export_range(0, 2000, 1, "prefix:+", "suffix: px/minute") var ball_acceleration: float = 200
 
+@onready var bricks: Bricks = $Bricks
 @onready var paddle: Paddle = %Paddle
 @onready var ball_generator: BallGenerator = $BallGenerator
 @onready var acceleration_timer: Timer = $AccelerationTimer

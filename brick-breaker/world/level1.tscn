@@ -3,12 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://byfgx0co06u0g" path="res://components/level/level.tscn" id="1_8exih"]
 [ext_resource type="PackedScene" uid="uid://c18sg0gfo3e1h" path="res://components/bricks.tscn" id="2_ew4qw"]
 
-[node name="Level" unique_id=727468240 node_paths=PackedStringArray("bricks") instance=ExtResource("1_8exih")]
-bricks = NodePath("Bricks")
+[node name="Level" unique_id=727468240 instance=ExtResource("1_8exih")]
 
-[node name="Paddle" parent="." index="1" unique_id=13024222]
+[node name="Paddle" parent="." index="3" unique_id=13024222]
 max_speed = 2000.0
 
-[node name="Bricks" parent="." index="4" unique_id=1649302324 instance=ExtResource("2_ew4qw")]
+[node name="Bricks2" parent="." index="4" unique_id=1649302324 instance=ExtResource("2_ew4qw")]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAFAAoAAAAAAAAABgAGAAoAAAAAAAAABgAHAAoAAAAAAAAABgAIAAoAAAAAAAAABwAJAAoAAAAAAAAABwAFAAkAAAAAAAAAAgAGAAkAAAAAAAAAAgAHAAkAAAAAAAAAAgAIAAkAAAAAAAAAAgAJAAkAAAAAAAAAAgAKAAoAAAAAAAAABQAEAAoAAAAAAAAABQAEAAkAAAAAAAAABQAEAAgAAAAAAAAAAwAFAAgAAAAAAAAAAwAGAAgAAAAAAAAAAwAHAAgAAAAAAAAAAwAIAAgAAAAAAAAAAwAJAAgAAAAAAAAAAwAKAAgAAAAAAAAAAwAKAAkAAAAAAAAABQAEAAsAAAAAAAAABQAFAAsAAAAAAAAAAwAGAAsAAAAAAAAAAwAHAAsAAAAAAAAAAwAIAAsAAAAAAAAAAwAJAAsAAAAAAAAAAwAKAAsAAAAAAAAABQAFAAIAAAAAAAAABAAIAAIAAAAAAAAABAALAAIAAAAAAAAABAA=")
