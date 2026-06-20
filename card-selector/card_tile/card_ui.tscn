@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://qc3lp2j5rxkg"]
+
+[ext_resource type="Script" uid="uid://dn7bvrhuuwvg4" path="res://card_tile/card_ui.gd" id="1_l8xr5"]
+[ext_resource type="Texture2D" uid="uid://c7xqbvy4nj7vq" path="res://cards/back-card.png" id="2_qqpnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf5ia"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[node name="CardUi" type="Control" unique_id=1731679918]
+custom_minimum_size = Vector2(256, 384)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 384.0
+mouse_filter = 1
+script = ExtResource("1_l8xr5")
+
+[node name="Front" type="Panel" parent="." unique_id=514241835]
+custom_minimum_size = Vector2(256, 384)
+custom_maximum_size = Vector2(256, 384)
+layout_mode = 0
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0.5, 1)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_sf5ia")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Front" unique_id=440211237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Front/VBoxContainer" unique_id=1422209984]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="Front/VBoxContainer" unique_id=1562766028]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="Front/VBoxContainer" unique_id=617030364]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+fit_content = true
+
+[node name="Back" type="TextureRect" parent="." unique_id=819052631]
+layout_mode = 0
+texture = ExtResource("2_qqpnf")

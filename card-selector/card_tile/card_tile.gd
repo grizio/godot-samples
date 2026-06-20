@@ -15,31 +15,22 @@ const max_rotation = PI / 16
         max_index = value
         _setup()
 
-@onready var container: Panel = $CardTile
-@onready var title_label: Label = %Title
-@onready var texture_rect: TextureRect = %Texture
-@onready var description_text: RichTextLabel = %Description
+@onready var container: PanelContainer = $Container
+@onready var card_ui: CardUi = %CardUi
 @onready var minimum_size = custom_minimum_size.x
 
 var tween: Tween = null
 
 func _ready():
     _setup()
-    container.mouse_entered.connect(_on_mouse_entered)
-    container.mouse_exited.connect(_on_mouse_exited)
+    card_ui.mouse_entered.connect(_on_mouse_entered)
+    card_ui.mouse_exited.connect(_on_mouse_exited)
 
 func _setup() -> void:
-    if texture_rect == null:
+    if not is_node_ready():
         return
     
-    if card == null:
-        title_label.text = ""
-        texture_rect.texture = null
-        description_text.text = ""
-    else:
-        title_label.text = card.title
-        texture_rect.texture = card.texture
-        description_text.text = card.description
+    card_ui.card = card
     
     if index == 0:
         container.offset_transform_rotation = 0.0

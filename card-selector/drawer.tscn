@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bqdl7o07kwqgp"]
+
+[ext_resource type="Script" uid="uid://cyg1p84rlbrwd" path="res://drawer.gd" id="1_qe6j5"]
+[ext_resource type="PackedScene" uid="uid://qc3lp2j5rxkg" path="res://card_tile/card_ui.tscn" id="2_kj86r"]
+
+[node name="Drawer" type="VBoxContainer" unique_id=1977351445]
+offset_bottom = 1.0
+theme_override_constants/separation = 1
+alignment = 2
+script = ExtResource("1_qe6j5")
+
+[node name="Control" type="Control" parent="." unique_id=28511942]
+layout_mode = 2
+
+[node name="CardUi" parent="Control" unique_id=1731679918 instance=ExtResource("2_kj86r")]
+layout_mode = 0
+
+[node name="Control2" type="Control" parent="." unique_id=32420267]
+layout_mode = 2
+
+[node name="CardUi" parent="Control2" unique_id=683585022 instance=ExtResource("2_kj86r")]
+layout_mode = 0

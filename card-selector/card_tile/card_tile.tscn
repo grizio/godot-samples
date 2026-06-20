@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://5yvf0m85hbju"]
+
+[ext_resource type="Script" uid="uid://8xmcrkeb25w" path="res://card_tile/card_tile.gd" id="1_hxtyv"]
+[ext_resource type="PackedScene" uid="uid://qc3lp2j5rxkg" path="res://card_tile/card_ui.tscn" id="2_7bsum"]
+
+[node name="CardTile" type="Control" unique_id=236924925]
+custom_minimum_size = Vector2(164, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 512.0
+script = ExtResource("1_hxtyv")
+
+[node name="Container" type="PanelContainer" parent="." unique_id=1232004048]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0.5, 1)
+
+[node name="CardUi" parent="Container" unique_id=1731679918 instance=ExtResource("2_7bsum")]
+unique_name_in_owner = true
+layout_mode = 2
+face = 0
