@@ -71,7 +71,7 @@ func reset() -> void:
 
 func _create_empty_data() -> SaveData:
     data = SaveData.new()
-    data.enabled_levels = ["Tuto"]
+    data.enabled_levels = ["Start"]
     return data
 
 func enable_level(level: String) -> void:

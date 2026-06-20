@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byfgx0co06u0g"]
 
-[ext_resource type="Script" uid="uid://f8727crsjv6d" path="res://components/level/level.gd" id="1_yqsmv"]
+[ext_resource type="Script" uid="uid://f8727crsjv6d" path="res://world/level.gd" id="1_yqsmv"]
 [ext_resource type="Script" uid="uid://cpf34tsssw8o0" path="res://components/hitbox.gd" id="2_explk"]
 [ext_resource type="PackedScene" uid="uid://dnok4dpadxev" path="res://components/paddle/paddle.tscn" id="3_e3qmh"]
 [ext_resource type="PackedScene" uid="uid://c18sg0gfo3e1h" path="res://components/bricks.tscn" id="4_7in7u"]

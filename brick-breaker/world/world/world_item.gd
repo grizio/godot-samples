@@ -24,7 +24,11 @@ enum State {
 
 
 func _ready() -> void:
-    assert(scene != null, "scene must be set")
+    assert(scene != null, "scene must be set for " + name)
+
+    var comment: Node2D = get_node_or_null("Comment")
+    if comment != null:
+        comment.notes = name
 
     _setup_state()
 
@@ -33,7 +37,7 @@ func _ready() -> void:
 
 func _setup_state() -> void:
     var expected_texture: Texture
-    if Data.is_level_won(name):
+    if Engine.is_editor_hint() or Data.is_level_won(name):
         expected_texture = item_won
         disabled = false
     elif Data.is_level_enabled(name):

@@ -51,7 +51,6 @@ func _setup_width() -> void:
     if polygon == null:
         return
     
-    print("setup width", width)
     polygon.polygon = [
         Vector2(- (width / 2 - 8), -8),
         Vector2(width / 2 - 8, -8),

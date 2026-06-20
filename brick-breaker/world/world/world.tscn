@@ -3,13 +3,61 @@
 [ext_resource type="Script" uid="uid://ww24u8vcw0uc" path="res://world/world/world.gd" id="1_1tbfg"]
 [ext_resource type="PackedScene" uid="uid://bnscgobeq8sgd" path="res://world/world/world_item.tscn" id="1_jxir3"]
 [ext_resource type="Texture2D" uid="uid://dekqni4shkjok" path="res://ui/world-background.png" id="2_rk7fn"]
+[ext_resource type="Texture2D" uid="uid://cf5ji0xhknumg" path="res://world/world/item-won.png" id="4_2ansq"]
 [ext_resource type="PackedScene" uid="uid://72p8pkdihvt6" path="res://world/level0.tscn" id="4_csdlw"]
 [ext_resource type="PackedScene" uid="uid://b3tq4ul4pa3d1" path="res://world/level_ball_power_up_1.tscn" id="5_0ist6"]
 [ext_resource type="PackedScene" uid="uid://ceplp1vbyv88y" path="res://world/world/hud.tscn" id="6_j28bi"]
 [ext_resource type="PackedScene" uid="uid://dp7iluplsbt7t" path="res://world/level_ball_generator.tscn" id="6_qnlc3"]
 [ext_resource type="PackedScene" uid="uid://d2kx4ga61gqsv" path="res://world/level_fire.tscn" id="7_dikho"]
 [ext_resource type="PackedScene" uid="uid://bfc676j4ephyb" path="res://world/level_flow.tscn" id="8_igqxp"]
-[ext_resource type="Script" uid="uid://cp5a4rnd67krw" path="res://components/comment.gd" id="10_0ist6"]
+[ext_resource type="PackedScene" uid="uid://bkxqaen51io4u" path="res://world/level_flow_1.tscn" id="10_llww0"]
+[ext_resource type="PackedScene" uid="uid://8gw3mdbivuiq" path="res://world/level_flow_2.tscn" id="11_irsqg"]
+[ext_resource type="PackedScene" uid="uid://cfmy7pr42j0u2" path="res://world/level_base_1.tscn" id="11_qnlc3"]
+[ext_resource type="PackedScene" uid="uid://c2okpt7fjsyn7" path="res://world/level_base_2.tscn" id="12_2s0tq"]
+[ext_resource type="PackedScene" uid="uid://b3ixen4x13h4r" path="res://world/level_flow_3.tscn" id="12_vag45"]
+[ext_resource type="PackedScene" uid="uid://c5pysh3vq7lwr" path="res://world/level_base_3.tscn" id="13_2ansq"]
+[ext_resource type="PackedScene" uid="uid://t751xrtev26c" path="res://world/level_flow_4.tscn" id="13_82x5x"]
+[ext_resource type="PackedScene" uid="uid://r3acwv0mfenw" path="res://world/level_flow_5.tscn" id="14_ephn7"]
+[ext_resource type="PackedScene" uid="uid://dmsgrpqy3u5nt" path="res://world/level_base_4.tscn" id="14_g8scl"]
+[ext_resource type="PackedScene" uid="uid://bp5n2m1d3x6pf" path="res://world/level_flow_8.tscn" id="15_6pg1w"]
+[ext_resource type="PackedScene" uid="uid://dcrmreq1wjuun" path="res://world/level_base_5.tscn" id="15_mgjuw"]
+[ext_resource type="PackedScene" uid="uid://cfj7vfrh7ut8e" path="res://world/level_flow_9.tscn" id="16_4n3bj"]
+[ext_resource type="PackedScene" uid="uid://bhcg5mvovxf8v" path="res://world/level_base_6.tscn" id="16_ebnwc"]
+[ext_resource type="PackedScene" uid="uid://bcf6n1rfe4vgd" path="res://world/level_base_7.tscn" id="17_gx8n8"]
+[ext_resource type="PackedScene" uid="uid://c6lq425ft7eij" path="res://world/level_flow_10.tscn" id="17_k85xe"]
+[ext_resource type="PackedScene" uid="uid://ghnbxif31fvq" path="res://world/level_base_8.tscn" id="18_oadip"]
+[ext_resource type="PackedScene" uid="uid://kld82sj48x4o" path="res://world/level_flow_6.tscn" id="18_umg86"]
+[ext_resource type="PackedScene" uid="uid://bqwu1o0nvmnhl" path="res://world/level_base_9.tscn" id="19_4wo5q"]
+[ext_resource type="PackedScene" uid="uid://hurixjy7bkc7" path="res://world/level_flow_7.tscn" id="19_ey7gc"]
+[ext_resource type="PackedScene" uid="uid://b4wxiamm2v77l" path="res://world/level_base_10.tscn" id="20_6enky"]
+[ext_resource type="PackedScene" uid="uid://c80hgux2k6ftr" path="res://world/level_random_1.tscn" id="20_olgvb"]
+[ext_resource type="PackedScene" uid="uid://bvbcluq7ucue8" path="res://world/level_random_2.tscn" id="21_pas0m"]
+[ext_resource type="PackedScene" uid="uid://boy0cq3ycs5x2" path="res://world/level_robust_1.tscn" id="22_4wo5q"]
+[ext_resource type="PackedScene" uid="uid://cty4jneq3nu7m" path="res://world/level_random_3.tscn" id="22_plih8"]
+[ext_resource type="PackedScene" uid="uid://bj5rnqknx8uuu" path="res://world/level_robust_2.tscn" id="23_6enky"]
+[ext_resource type="PackedScene" uid="uid://dd1qg68y5cae5" path="res://world/level_random_5.tscn" id="24_c7chr"]
+[ext_resource type="PackedScene" uid="uid://c50yrj885jey" path="res://world/level_robust_3.tscn" id="24_itsf7"]
+[ext_resource type="PackedScene" uid="uid://dubb44807gcmp" path="res://world/level_random_6.tscn" id="25_kfpn1"]
+[ext_resource type="PackedScene" uid="uid://umm74fxvofuf" path="res://world/level_robust_4.tscn" id="25_u5ajv"]
+[ext_resource type="PackedScene" uid="uid://db56cs4em0alf" path="res://world/level_robust_5.tscn" id="26_cfrkw"]
+[ext_resource type="PackedScene" uid="uid://feshqjbext16" path="res://world/level_robust_6.tscn" id="27_yo8qm"]
+[ext_resource type="PackedScene" uid="uid://d4li6bpsjabhb" path="res://world/level_robust_7.tscn" id="28_cfrkw"]
+[ext_resource type="PackedScene" uid="uid://eii2alq050y8" path="res://world/level_random_10.tscn" id="29_c4vtj"]
+[ext_resource type="PackedScene" uid="uid://j58ylqn0mng2" path="res://world/level_robust_8.tscn" id="29_yo8qm"]
+[ext_resource type="PackedScene" uid="uid://d4ecwdxkdc1o2" path="res://world/level_robust_9.tscn" id="30_qxee3"]
+[ext_resource type="PackedScene" uid="uid://rk487tc3tc3i" path="res://world/level_robust_10.tscn" id="31_llww0"]
+[ext_resource type="PackedScene" uid="uid://bylfwjeytccpl" path="res://world/level_random_15.tscn" id="34_1k0cl"]
+[ext_resource type="PackedScene" uid="uid://uq81pkbtt8dg" path="res://world/level_random_16.tscn" id="35_7ib8n"]
+[ext_resource type="PackedScene" uid="uid://w57e6yeygnw" path="res://world/level_fire_1.tscn" id="47_y2ikn"]
+[ext_resource type="PackedScene" uid="uid://c0k56hmlj4ds3" path="res://world/level_fire_2.tscn" id="48_vqu8l"]
+[ext_resource type="PackedScene" uid="uid://gtsx1jayl210" path="res://world/level_fire_3.tscn" id="49_3q8ii"]
+[ext_resource type="PackedScene" uid="uid://b34or8bnp320h" path="res://world/level_fire_4.tscn" id="50_olgvb"]
+[ext_resource type="PackedScene" uid="uid://b4orvossljtch" path="res://world/level_fire_5.tscn" id="51_pas0m"]
+[ext_resource type="PackedScene" uid="uid://db7wvewkckpn2" path="res://world/level_fire_6.tscn" id="52_plih8"]
+[ext_resource type="PackedScene" uid="uid://tny5i2uplhsj" path="res://world/level_fire_7.tscn" id="53_ge0rh"]
+[ext_resource type="PackedScene" uid="uid://k5lcl17rahcd" path="res://world/level_fire_8.tscn" id="54_c7chr"]
+[ext_resource type="PackedScene" uid="uid://c6vunqocnxa3h" path="res://world/level_fire_9.tscn" id="55_kfpn1"]
+[ext_resource type="PackedScene" uid="uid://bs8sodj4rt304" path="res://world/level_fire_10.tscn" id="58_4qthw"]
 
 [node name="World" type="Node2D" unique_id=804923594]
 script = ExtResource("1_1tbfg")
@@ -19,72 +67,658 @@ repeat_size = Vector2(3840, 2160)
 
 [node name="WorldBackground" type="Sprite2D" parent="Parallax2D" unique_id=1541398814]
 texture = ExtResource("2_rk7fn")
+metadata/_edit_lock_ = true
 
-[node name="Tuto" parent="." unique_id=47026659 instance=ExtResource("1_jxir3")]
+[node name="Start" parent="." unique_id=47026659 instance=ExtResource("1_jxir3")]
 offset_left = 896.0
 offset_top = 640.0
 offset_right = 1024.0
 offset_bottom = 768.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
 scene = ExtResource("4_csdlw")
 
-[node name="Comment" type="Node2D" parent="Tuto" unique_id=763804920]
-script = ExtResource("10_0ist6")
-notes = "Tuto"
-metadata/_custom_type_script = "uid://cp5a4rnd67krw"
-
 [node name="Power1" parent="." unique_id=1156866306 instance=ExtResource("1_jxir3")]
-offset_left = 896.0
-offset_top = 512.0
-offset_right = 1024.0
-offset_bottom = 640.0
-disabled = true
+offset_left = 768.0
+offset_top = 384.0
+offset_right = 896.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
 scene = ExtResource("5_0ist6")
-
-[node name="Comment" type="Node2D" parent="Power1" unique_id=532140392]
-script = ExtResource("10_0ist6")
-notes = "Power 1"
-metadata/_custom_type_script = "uid://cp5a4rnd67krw"
 
 [node name="PowerBallGenerator" parent="." unique_id=321733612 instance=ExtResource("1_jxir3")]
 offset_left = 1024.0
-offset_top = 512.0
+offset_top = 896.0
 offset_right = 1152.0
-offset_bottom = 640.0
-disabled = true
+offset_bottom = 1024.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
 scene = ExtResource("6_qnlc3")
 
-[node name="Comment" type="Node2D" parent="PowerBallGenerator" unique_id=1077072183]
-script = ExtResource("10_0ist6")
-notes = "Power ball"
-metadata/_custom_type_script = "uid://cp5a4rnd67krw"
-
 [node name="PowerFire" parent="." unique_id=1780674309 instance=ExtResource("1_jxir3")]
-offset_left = 1024.0
-offset_top = 384.0
-offset_right = 1152.0
-offset_bottom = 512.0
-disabled = true
+offset_left = 1280.0
+offset_top = 256.0
+offset_right = 1408.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
 scene = ExtResource("7_dikho")
 
-[node name="Comment" type="Node2D" parent="PowerFire" unique_id=799405063]
-script = ExtResource("10_0ist6")
-notes = "Power fire"
-metadata/_custom_type_script = "uid://cp5a4rnd67krw"
-
 [node name="PowerFlow" parent="." unique_id=832967189 instance=ExtResource("1_jxir3")]
-offset_left = 768.0
-offset_top = 512.0
-offset_right = 896.0
-offset_bottom = 640.0
-disabled = true
+offset_left = 0.0
+offset_top = 384.0
+offset_right = 128.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
 scene = ExtResource("8_igqxp")
 
-[node name="Comment" type="Node2D" parent="PowerFlow" unique_id=314366270]
-script = ExtResource("10_0ist6")
-notes = "Power flow"
-metadata/_custom_type_script = "uid://cp5a4rnd67krw"
+[node name="LevelFlow" parent="." unique_id=248581690 instance=ExtResource("1_jxir3")]
+offset_left = 128.0
+offset_top = 640.0
+offset_right = 256.0
+offset_bottom = 768.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("10_llww0")
+
+[node name="LevelFlow2" parent="." unique_id=277265742 instance=ExtResource("1_jxir3")]
+offset_left = -128.0
+offset_top = 256.0
+offset_right = 0.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("11_irsqg")
+
+[node name="LevelFlow3" parent="." unique_id=240390642 instance=ExtResource("1_jxir3")]
+offset_left = -128.0
+offset_top = 384.0
+offset_right = 0.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("12_vag45")
+
+[node name="LevelFlow4" parent="." unique_id=173327050 instance=ExtResource("1_jxir3")]
+offset_left = -128.0
+offset_top = 768.0
+offset_right = 0.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("13_82x5x")
+
+[node name="LevelFlow5" parent="." unique_id=676146338 instance=ExtResource("1_jxir3")]
+offset_left = 0.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 256.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("14_ephn7")
+
+[node name="LevelFlow8" parent="." unique_id=1834178927 instance=ExtResource("1_jxir3")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("15_6pg1w")
+
+[node name="LevelFlow9" parent="." unique_id=1187820589 instance=ExtResource("1_jxir3")]
+offset_left = 128.0
+offset_top = 0.0
+offset_right = 256.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("16_4n3bj")
+
+[node name="LevelFlow10" parent="." unique_id=486340027 instance=ExtResource("1_jxir3")]
+offset_left = 256.0
+offset_top = 0.0
+offset_right = 384.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("17_k85xe")
+
+[node name="LevelFlow6" parent="." unique_id=1715004563 instance=ExtResource("1_jxir3")]
+offset_left = -128.0
+offset_top = 128.0
+offset_right = 0.0
+offset_bottom = 256.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("18_umg86")
+
+[node name="LevelFlow7" parent="." unique_id=2141602767 instance=ExtResource("1_jxir3")]
+offset_left = -128.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("19_ey7gc")
+
+[node name="LevelRandom5" parent="." unique_id=88435022 instance=ExtResource("1_jxir3")]
+offset_left = 0.0
+offset_top = 768.0
+offset_right = 128.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("24_c7chr")
+
+[node name="LevelRandom6" parent="." unique_id=749375427 instance=ExtResource("1_jxir3")]
+offset_left = 128.0
+offset_top = 768.0
+offset_right = 256.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("25_kfpn1")
+
+[node name="LevelRandom10" parent="." unique_id=25274959 instance=ExtResource("1_jxir3")]
+offset_left = -256.0
+offset_top = 384.0
+offset_right = -128.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("29_c4vtj")
+
+[node name="LevelRandom11" parent="." unique_id=1683221913 instance=ExtResource("1_jxir3")]
+offset_left = -384.0
+offset_top = 384.0
+offset_right = -256.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("20_olgvb")
+
+[node name="LevelRandom12" parent="." unique_id=1287139848 instance=ExtResource("1_jxir3")]
+offset_left = -256.0
+offset_top = 768.0
+offset_right = -128.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("21_pas0m")
+
+[node name="LevelRandom13" parent="." unique_id=417450019 instance=ExtResource("1_jxir3")]
+offset_left = -384.0
+offset_top = 256.0
+offset_right = -256.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("22_plih8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2114130209]
 position_smoothing_enabled = true
 
 [node name="Hud" parent="." unique_id=1782128396 instance=ExtResource("6_j28bi")]
+
+[node name="LevelBase1" parent="." unique_id=1300385599 instance=ExtResource("1_jxir3")]
+offset_left = 768.0
+offset_top = 768.0
+offset_right = 896.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("11_qnlc3")
+
+[node name="LevelBase2" parent="." unique_id=690889805 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
+offset_top = 768.0
+offset_right = 1024.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("12_2s0tq")
+
+[node name="LevelBase3" parent="." unique_id=1646859335 instance=ExtResource("1_jxir3")]
+offset_left = 640.0
+offset_top = 768.0
+offset_right = 768.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("13_2ansq")
+
+[node name="LevelBase4" parent="." unique_id=180872357 instance=ExtResource("1_jxir3")]
+offset_left = 512.0
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("14_g8scl")
+
+[node name="LevelBase12" parent="." unique_id=1113362544 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 896.0
+offset_right = 1280.0
+offset_bottom = 1024.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("14_g8scl")
+
+[node name="LevelBase5" parent="." unique_id=846288360 instance=ExtResource("1_jxir3")]
+offset_left = 512.0
+offset_top = 768.0
+offset_right = 640.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("15_mgjuw")
+
+[node name="LevelBase6" parent="." unique_id=1482083616 instance=ExtResource("1_jxir3")]
+offset_left = 768.0
+offset_top = 512.0
+offset_right = 896.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("16_ebnwc")
+
+[node name="LevelBase7" parent="." unique_id=364281338 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
+offset_top = 512.0
+offset_right = 1024.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("17_gx8n8")
+
+[node name="LevelBase11" parent="." unique_id=842510709 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
+offset_top = 1024.0
+offset_right = 1024.0
+offset_bottom = 1152.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("17_gx8n8")
+
+[node name="LevelBase8" parent="." unique_id=492317763 instance=ExtResource("1_jxir3")]
+offset_left = 128.0
+offset_top = 512.0
+offset_right = 256.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("18_oadip")
+
+[node name="LevelBase9" parent="." unique_id=1793669948 instance=ExtResource("1_jxir3")]
+offset_left = 1024.0
+offset_top = 639.0
+offset_right = 1152.0
+offset_bottom = 767.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("19_4wo5q")
+
+[node name="LevelBase14" parent="." unique_id=1648498245 instance=ExtResource("1_jxir3")]
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 384.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("19_4wo5q")
+
+[node name="LevelBase10" parent="." unique_id=158078763 instance=ExtResource("1_jxir3")]
+offset_left = 1024.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("20_6enky")
+
+[node name="LevelBase13" parent="." unique_id=1907659913 instance=ExtResource("1_jxir3")]
+offset_left = 384.0
+offset_top = 512.0
+offset_right = 512.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("20_6enky")
+
+[node name="LevelRobust1" parent="." unique_id=1334796405 instance=ExtResource("1_jxir3")]
+offset_left = 1024.0
+offset_top = 768.0
+offset_right = 1152.0
+offset_bottom = 896.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("22_4wo5q")
+
+[node name="LevelRobust2" parent="." unique_id=334138288 instance=ExtResource("1_jxir3")]
+offset_left = 896.0
+offset_top = 896.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("23_6enky")
+
+[node name="LevelRobust3" parent="." unique_id=396154188 instance=ExtResource("1_jxir3")]
+offset_left = 768.0
+offset_top = 896.0
+offset_right = 896.0
+offset_bottom = 1024.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("24_itsf7")
+
+[node name="LevelRobust4" parent="." unique_id=1838584081 instance=ExtResource("1_jxir3")]
+offset_left = 640.0
+offset_top = 896.0
+offset_right = 768.0
+offset_bottom = 1024.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("25_u5ajv")
+
+[node name="LevelRobust5" parent="." unique_id=1291641714 instance=ExtResource("1_jxir3")]
+offset_left = 128.0
+offset_top = 384.0
+offset_right = 256.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("26_cfrkw")
+
+[node name="LevelRobust6" parent="." unique_id=2039047210 instance=ExtResource("1_jxir3")]
+offset_left = 512.0
+offset_top = 640.0
+offset_right = 640.0
+offset_bottom = 768.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("27_yo8qm")
+
+[node name="LevelRobust12" parent="." unique_id=1730651130 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 1024.0
+offset_right = 1280.0
+offset_bottom = 1152.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("27_yo8qm")
+
+[node name="LevelRobust7" parent="." unique_id=1958528755 instance=ExtResource("1_jxir3")]
+offset_left = 512.0
+offset_top = 512.0
+offset_right = 640.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("28_cfrkw")
+
+[node name="LevelRobust8" parent="." unique_id=466693103 instance=ExtResource("1_jxir3")]
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 768.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("29_yo8qm")
+
+[node name="LevelRobust9" parent="." unique_id=505705375 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 640.0
+offset_right = 1280.0
+offset_bottom = 768.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("30_qxee3")
+
+[node name="LevelRobust10" parent="." unique_id=499785992 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 512.0
+offset_right = 1280.0
+offset_bottom = 640.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("31_llww0")
+
+[node name="LevelRobust11" parent="." unique_id=1634046081 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("23_6enky")
+
+[node name="LevelFire" parent="." unique_id=1703938025 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("47_y2ikn")
+
+[node name="LevelFire2" parent="." unique_id=953560252 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 256.0
+offset_right = 1280.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("48_vqu8l")
+
+[node name="LevelFire3" parent="." unique_id=1291171106 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 128.0
+offset_right = 1280.0
+offset_bottom = 256.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("49_3q8ii")
+
+[node name="LevelFire4" parent="." unique_id=589628376 instance=ExtResource("1_jxir3")]
+offset_left = 1152.0
+offset_top = 0.0
+offset_right = 1280.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("50_olgvb")
+
+[node name="LevelFire5" parent="." unique_id=1515712005 instance=ExtResource("1_jxir3")]
+offset_left = 1280.0
+offset_top = 0.0
+offset_right = 1408.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("51_pas0m")
+
+[node name="LevelFire6" parent="." unique_id=1746692098 instance=ExtResource("1_jxir3")]
+offset_left = 1408.0
+offset_top = 0.0
+offset_right = 1536.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("52_plih8")
+
+[node name="LevelFire7" parent="." unique_id=571403366 instance=ExtResource("1_jxir3")]
+offset_left = 1408.0
+offset_top = 128.0
+offset_right = 1536.0
+offset_bottom = 256.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("53_ge0rh")
+
+[node name="LevelFire8" parent="." unique_id=474154042 instance=ExtResource("1_jxir3")]
+offset_left = 1408.0
+offset_top = 256.0
+offset_right = 1536.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("54_c7chr")
+
+[node name="LevelFire9" parent="." unique_id=1341892951 instance=ExtResource("1_jxir3")]
+offset_left = 1536.0
+offset_top = 256.0
+offset_right = 1664.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("55_kfpn1")
+
+[node name="LevelRandom" parent="." unique_id=2107300002 instance=ExtResource("1_jxir3")]
+offset_left = 1664.0
+offset_top = 256.0
+offset_right = 1792.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("34_1k0cl")
+
+[node name="LevelRandom2" parent="." unique_id=1213954510 instance=ExtResource("1_jxir3")]
+offset_left = 1664.0
+offset_top = 384.0
+offset_right = 1792.0
+offset_bottom = 512.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("35_7ib8n")
+
+[node name="LevelFire10" parent="." unique_id=2030586127 instance=ExtResource("1_jxir3")]
+offset_left = 1536.0
+offset_top = 0.0
+offset_right = 1664.0
+offset_bottom = 128.0
+texture_normal = ExtResource("4_2ansq")
+texture_pressed = ExtResource("4_2ansq")
+texture_hover = ExtResource("4_2ansq")
+texture_focused = ExtResource("4_2ansq")
+scene = ExtResource("58_4qthw")

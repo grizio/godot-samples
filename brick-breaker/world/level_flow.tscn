@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bfc676j4ephyb"]
 
-[ext_resource type="PackedScene" uid="uid://byfgx0co06u0g" path="res://components/level/level.tscn" id="1_072mr"]
+[ext_resource type="PackedScene" uid="uid://byfgx0co06u0g" path="res://world/level.tscn" id="1_072mr"]
 [ext_resource type="PackedScene" uid="uid://dey2g5hvml0uf" path="res://components/brick/power_brick/power_brick.tscn" id="3_nt2x5"]
 
 [node name="Level" unique_id=727468240 instance=ExtResource("1_072mr")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://blf1od0v3frxu" path="res://world/world/item-disabled.png" id="1_a0k0e"]
 [ext_resource type="Script" uid="uid://pepcewih1lbt" path="res://world/world/world_item.gd" id="2_vt3so"]
+[ext_resource type="Script" uid="uid://cp5a4rnd67krw" path="res://components/comment.gd" id="3_oexf1"]
 
 [node name="WorldItem" type="TextureButton" unique_id=248581690]
 offset_left = -64.0
@@ -10,3 +11,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 texture_normal = ExtResource("1_a0k0e")
 script = ExtResource("2_vt3so")
+
+[node name="Comment" type="Node2D" parent="." unique_id=1856316315]
+script = ExtResource("3_oexf1")
+metadata/_custom_type_script = "uid://cp5a4rnd67krw"
