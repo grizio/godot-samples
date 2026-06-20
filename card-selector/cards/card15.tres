@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bws56jroyjqyv"]
+
+[ext_resource type="Script" uid="uid://bjjx4n72jdper" path="res://cards/card.gd" id="1_yl5pn"]
+[ext_resource type="Texture2D" uid="uid://dlu1vee6bnuef" path="res://cards/cards.png" id="2_35bji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
+atlas = ExtResource("2_35bji")
+region = Rect2(1024, 512, 256, 256)
+
+[resource]
+script = ExtResource("1_yl5pn")
+value = 15
+title = "Fifteen"
+description = "Another red card"
+texture = SubResource("AtlasTexture_ig7tw")
+metadata/_custom_type_script = "uid://bjjx4n72jdper"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://b2nr1w0wgel0x"]
+
+[ext_resource type="Script" uid="uid://bjjx4n72jdper" path="res://cards/card.gd" id="1_pgy7v"]
+[ext_resource type="Texture2D" uid="uid://dlu1vee6bnuef" path="res://cards/cards.png" id="2_ujdyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
+atlas = ExtResource("2_ujdyq")
+region = Rect2(0, 384, 64, 128)
+
+[resource]
+script = ExtResource("1_pgy7v")
+value = 16
+title = "Sixteen"
+description = "High school"
+texture = SubResource("AtlasTexture_ig7tw")
+metadata/_custom_type_script = "uid://bjjx4n72jdper"

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cral1vp8nqn35"]
+
+[ext_resource type="PackedScene" uid="uid://dl8kvb44clelk" path="res://cards.tscn" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://5yvf0m85hbju" path="res://cards/card_tile.tscn" id="1_lquwl"]
+[ext_resource type="Resource" uid="uid://b4is3ymvjhvqj" path="res://cards/card12.tres" id="3_lquwl"]
+[ext_resource type="Resource" uid="uid://yu6meopkrk6f" path="res://cards/card17.tres" id="4_7mycd"]
+[ext_resource type="Resource" uid="uid://j2uk81dd1ewj" path="res://cards/card19.tres" id="5_272bh"]
+
+[node name="Control" type="Control" unique_id=1480681280]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cards" parent="." unique_id=1789008163 instance=ExtResource("1_7mycd")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -512.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="CardTile" parent="Cards" unique_id=897863184 instance=ExtResource("1_lquwl")]
+layout_mode = 2
+card = ExtResource("3_lquwl")
+
+[node name="CardTile2" parent="Cards" unique_id=1378670091 instance=ExtResource("1_lquwl")]
+layout_mode = 2
+card = ExtResource("4_7mycd")
+
+[node name="CardTile3" parent="Cards" unique_id=1474060413 instance=ExtResource("1_lquwl")]
+layout_mode = 2
+card = ExtResource("5_272bh")

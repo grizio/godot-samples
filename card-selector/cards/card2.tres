@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dhrx8fb5uqwyb"]
+
+[ext_resource type="Texture2D" uid="uid://dlu1vee6bnuef" path="res://cards/cards.png" id="1_rb1i4"]
+[ext_resource type="Script" uid="uid://bjjx4n72jdper" path="res://cards/card.gd" id="1_rxsxw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
+atlas = ExtResource("1_rb1i4")
+region = Rect2(256, 0, 256, 256)
+
+[resource]
+script = ExtResource("1_rxsxw")
+value = 2
+title = "Two"
+description = "Two is better than one."
+texture = SubResource("AtlasTexture_ig7tw")
+metadata/_custom_type_script = "uid://bjjx4n72jdper"

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://5yvf0m85hbju"]
+
+[ext_resource type="Script" uid="uid://8xmcrkeb25w" path="res://cards/card_tile.gd" id="1_hxtyv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exjqi"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[node name="CardTile" type="Control" unique_id=236924925]
+custom_minimum_size = Vector2(164, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 512.0
+script = ExtResource("1_hxtyv")
+
+[node name="CardTile" type="Panel" parent="." unique_id=897863184]
+custom_minimum_size = Vector2(256, 384)
+custom_maximum_size = Vector2(256, 384)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 384.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0.5, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_exjqi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardTile" unique_id=1561308014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CardTile/VBoxContainer" unique_id=282132120]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="CardTile/VBoxContainer" unique_id=1735618702]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="CardTile/VBoxContainer" unique_id=1397957486]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+fit_content = true

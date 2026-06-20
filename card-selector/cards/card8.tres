@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://0ykhyem40hiu"]
+
+[ext_resource type="Texture2D" uid="uid://dlu1vee6bnuef" path="res://cards/cards.png" id="1_c2qvw"]
+[ext_resource type="Script" uid="uid://bjjx4n72jdper" path="res://cards/card.gd" id="1_ga71b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
+atlas = ExtResource("1_c2qvw")
+region = Rect2(512, 256, 256, 256)
+
+[resource]
+script = ExtResource("1_ga71b")
+value = 8
+title = "Eight"
+description = "Eggs"
+texture = SubResource("AtlasTexture_ig7tw")
+metadata/_custom_type_script = "uid://bjjx4n72jdper"

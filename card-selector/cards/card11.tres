@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://berq6gixjfk1f"]
+
+[ext_resource type="Script" uid="uid://bjjx4n72jdper" path="res://cards/card.gd" id="1_v41p5"]
+[ext_resource type="Texture2D" uid="uid://dlu1vee6bnuef" path="res://cards/cards.png" id="2_ppc6m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
+atlas = ExtResource("2_ppc6m")
+region = Rect2(0, 512, 256, 256)
+
+[resource]
+script = ExtResource("1_v41p5")
+value = 11
+title = "Eleven"
+description = "Like elven but with another e."
+texture = SubResource("AtlasTexture_ig7tw")
+metadata/_custom_type_script = "uid://bjjx4n72jdper"
