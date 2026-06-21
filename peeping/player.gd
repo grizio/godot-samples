@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
     var right_stick_y = Input.get_axis("look_up", "look_down")
     
     if abs(right_stick_x) > 0.1 or abs(right_stick_y) > 0.1:
-        camera_pivot.rotation.x -= right_stick_y * rotation_speed
+        camera_pivot.rotation.x += right_stick_y * rotation_speed
         # Prevent the camera from rotating too far up or down.
         camera_pivot.rotation.x = clampf(camera_pivot.rotation.x, -tilt_limit, tilt_limit)
         rotation.y += right_stick_x * rotation_speed
