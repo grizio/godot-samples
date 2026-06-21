@@ -1,12 +1,13 @@
 class_name Player extends CharacterBody3D
 
+const BulletScene = preload("res://components/bullet/bullet.tscn")
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @export_range(0.0, 1.0, 0.01) var rotation_speed: float = 0.15
 @export var tilt_limit = deg_to_rad(75)
 
-@onready var camera = %Camera3D
 @onready var camera_pivot := %CameraPivot as Node3D
 
 func _physics_process(delta: float) -> void:
@@ -41,3 +42,9 @@ func _process(_delta: float) -> void:
         # Prevent the camera from rotating too far up or down.
         camera_pivot.rotation.x = clampf(camera_pivot.rotation.x, -tilt_limit, tilt_limit)
         rotation.y += right_stick_x * rotation_speed
+
+func _unhandled_input(event: InputEvent) -> void:
+    if event.is_action_pressed("fire"):
+        var bullet = BulletScene.instantiate()
+        bullet.setup(camera_pivot.global_position, camera_pivot.global_transform.basis.z)
+        get_tree().current_scene.add_child(bullet)

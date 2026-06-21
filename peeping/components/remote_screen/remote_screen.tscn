@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://rjirthnnm0l0"]
+
+[ext_resource type="Script" uid="uid://s0u1rhxixlqp" path="res://components/remote_screen/remote_screen.gd" id="1_qmtg3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0xm2m"]
+
+[node name="RemoteScreen" type="Node3D" unique_id=1566020422]
+script = ExtResource("1_qmtg3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1555367566]
+size = Vector3(1.94, 1.1, 0.1)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1279218741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.060058594)
+texture = SubResource("ViewportTexture_0xm2m")

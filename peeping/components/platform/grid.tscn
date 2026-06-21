@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://o42o3xp0ny1o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uprnm"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8xlf"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="PrismMesh" id="PrismMesh_v8xlf"]
+left_to_right = 1.0
+size = Vector3(2, 1, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v8xlf"]
+points = PackedVector3Array(-1, -0.5, -1, -1, -0.5, 1, 1, -0.5, 1, 1, -0.5, -1, 1, 0.5, -1, 1, 0.5, 1)
+
+[node name="Grid" type="Node3D" unique_id=798414272]
+
+[node name="Floor2x1x2" type="MeshInstance3D" parent="." unique_id=1303613607]
+visible = false
+mesh = SubResource("BoxMesh_uprnm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor2x1x2" unique_id=1738958451]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2x1x2/StaticBody3D" unique_id=82771722]
+shape = SubResource("BoxShape3D_v8xlf")
+
+[node name="Ramp2x1x2" type="MeshInstance3D" parent="." unique_id=407019246]
+mesh = SubResource("PrismMesh_v8xlf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp2x1x2" unique_id=471926989]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp2x1x2/StaticBody3D" unique_id=1680796661]
+shape = SubResource("ConvexPolygonShape3D_v8xlf")

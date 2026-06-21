@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://clhilxqmk6y3t"]
+
+[ext_resource type="Script" uid="uid://bqa7c6k6hb5um" path="res://components/remote_camera/remote_camera.gd" id="1_ieh6e"]
+
+[node name="RemoteCamera" type="SubViewport" unique_id=1928459589]
+size = Vector2i(192, 108)
+script = ExtResource("1_ieh6e")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1695895763]
