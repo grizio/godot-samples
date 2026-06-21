@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b01wptwndryum" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://c34n1lpip2twp" path="res://Animation Library[Standard]/Godot/AnimationLibrary_Godot_Standard.glb" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://qp5yes82d3b" path="res://cursor.png" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uprnm"]
 radius = 0.2
@@ -27,3 +28,19 @@ spring_length = 0.75
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=952274993]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0.046299893, 0.015729189, 0.25659823)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=253897819]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1508097371]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i3pqv")
