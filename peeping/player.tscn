@@ -1,22 +1,28 @@
 [gd_scene format=3 uid="uid://dn7cf5pqe37pv"]
 
 [ext_resource type="Script" uid="uid://b01wptwndryum" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://c34n1lpip2twp" path="res://Animation Library[Standard]/Godot/AnimationLibrary_Godot_Standard.glb" id="2_onrkg"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_uprnm"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uprnm"]
+radius = 0.2
+height = 1.8330078
 
 [node name="Player" type="CharacterBody3D" unique_id=819570037]
 script = ExtResource("1_4flbx")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=127666081]
+[node name="AnimationLibrary_Godot_Standard" parent="." unique_id=1446533935 instance=ExtResource("2_onrkg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1155061532]
-shape = SubResource("SphereShape3D_uprnm")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143628829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9023471, 0)
+shape = SubResource("CapsuleShape3D_uprnm")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=527208341]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76567256, 0.8629061)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1631003490]
+spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=952274993]
 unique_name_in_owner = true

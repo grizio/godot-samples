@@ -3,7 +3,7 @@ class_name Player extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-@export_range(0.0, 1.0) var mouse_sensitivity = 0.01
+@export_range(0.0, 1.0, 0.01) var rotation_speed: float = 0.15
 @export var tilt_limit = deg_to_rad(75)
 
 @onready var camera = %Camera3D
@@ -31,10 +31,13 @@ func _physics_process(delta: float) -> void:
 
     move_and_slide()
 
-func _unhandled_input(event: InputEvent) -> void:
-    # Mouselook implemented using `screen_relative` for resolution-independent sensitivity.
-    if event is InputEventMouseMotion:
-        camera_pivot.rotation.x -= event.screen_relative.y * mouse_sensitivity
+func _process(_delta: float) -> void:
+    # Handle controller right stick camera look.
+    var right_stick_x = - Input.get_axis("look_left", "look_right")
+    var right_stick_y = Input.get_axis("look_up", "look_down")
+    
+    if abs(right_stick_x) > 0.1 or abs(right_stick_y) > 0.1:
+        camera_pivot.rotation.x -= right_stick_y * rotation_speed
         # Prevent the camera from rotating too far up or down.
         camera_pivot.rotation.x = clampf(camera_pivot.rotation.x, -tilt_limit, tilt_limit)
-        camera_pivot.rotation.y += -event.screen_relative.x * mouse_sensitivity
+        rotation.y += right_stick_x * rotation_speed
