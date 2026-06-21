@@ -5,10 +5,11 @@ const BulletScene = preload("res://components/bullet/bullet.tscn")
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-@export_range(0.0, 1.0, 0.01) var rotation_speed: float = 0.15
+@export_range(0.0, 1.0, 0.01) var rotation_speed: float = 0.10
 @export var tilt_limit = deg_to_rad(75)
 
-@onready var camera_pivot := %CameraPivot as Node3D
+@onready var camera_pivot: Node3D = %CameraPivot
+@onready var button_detector: RayCast3D = %ButtonDetector
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.
@@ -48,3 +49,6 @@ func _unhandled_input(event: InputEvent) -> void:
         var bullet = BulletScene.instantiate()
         bullet.setup(camera_pivot.global_position, camera_pivot.global_transform.basis.z)
         get_tree().current_scene.add_child(bullet)
+    elif event.is_action_pressed("press"):
+        if button_detector.is_colliding():
+            button_detector.get_collider().click()

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://imwn4t78xa0d"]
+
+[ext_resource type="Script" uid="uid://dmwnx653ufajq" path="res://components/computer/computer_button.gd" id="1_2evat"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uprnm"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uprnm"]
+height = 0.1
+radius = 0.1
+
+[node name="ComputerButton" type="StaticBody3D" unique_id=1238887724]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_2evat")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809571834]
+mesh = SubResource("CylinderMesh_uprnm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1289241769]
+shape = SubResource("CylinderShape3D_uprnm")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=789437835]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.051437855, 0)
+pixel_size = 0.002

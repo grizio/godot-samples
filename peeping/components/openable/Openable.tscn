@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bw504d6amdo6u"]
+
+[ext_resource type="Script" uid="uid://cq2ky6rwgfwx4" path="res://components/openable/openable.gd" id="1_wfo2m"]
+
+[node name="Openable" type="Node3D" unique_id=1195507846]
+script = ExtResource("1_wfo2m")

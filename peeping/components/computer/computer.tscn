@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c0y6qipjhiwgv"]
+
+[ext_resource type="Script" uid="uid://ccpwfn656pp57" path="res://components/computer/computer.gd" id="1_xd5nd"]
+[ext_resource type="PackedScene" uid="uid://imwn4t78xa0d" path="res://components/computer/computer_button.tscn" id="2_aawib"]
+[ext_resource type="Texture2D" uid="uid://b1lnep64vksq4" path="res://components/symbols/triangle.tres" id="2_nddm5"]
+[ext_resource type="Texture2D" uid="uid://cj3kyslrcasef" path="res://components/symbols/none.tres" id="2_tpn08"]
+[ext_resource type="Texture2D" uid="uid://xm1smsbwfj5r" path="res://components/symbols/rectangle.tres" id="4_pt7u1"]
+[ext_resource type="Texture2D" uid="uid://cfg4t4wmwcufw" path="res://components/symbols/cross.tres" id="5_wi2pd"]
+
+[node name="Computer" type="Node3D" unique_id=1999152052]
+script = ExtResource("1_xd5nd")
+expected_code_1 = null
+expected_code_2 = null
+expected_code_3 = null
+expected_code_4 = null
+
+[node name="Base" type="Node3D" parent="." unique_id=1630734919]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Base" unique_id=282759853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.25)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Base" unique_id=810184366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.5)
+use_collision = true
+size = Vector3(1, 2, 0.5)
+
+[node name="Buttons" type="Node3D" parent="." unique_id=808136868]
+
+[node name="TriangleButton" parent="Buttons" unique_id=120164549 instance=ExtResource("2_aawib")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1, 0.25)
+code = "triangle"
+texture = ExtResource("2_nddm5")
+
+[node name="RectangleButton" parent="Buttons" unique_id=708868894 instance=ExtResource("2_aawib")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.25)
+code = "rectangle"
+texture = ExtResource("4_pt7u1")
+
+[node name="CrossButton" parent="Buttons" unique_id=1461765615 instance=ExtResource("2_aawib")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0.25)
+code = "cross"
+texture = ExtResource("5_wi2pd")
+
+[node name="Screen" type="Node3D" parent="." unique_id=1435365393]
+
+[node name="Symbol1" type="Sprite3D" parent="Screen" unique_id=93333495]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15820299, 1.648327, -0.24)
+pixel_size = 0.005
+texture = ExtResource("2_tpn08")
+
+[node name="Symbol2" type="Sprite3D" parent="Screen" unique_id=1947457405]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161797, 1.648327, -0.24)
+pixel_size = 0.005
+texture = ExtResource("2_tpn08")
+
+[node name="Symbol3" type="Sprite3D" parent="Screen" unique_id=1488151545]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15820299, 1.3283271, -0.24)
+pixel_size = 0.005
+texture = ExtResource("2_tpn08")
+
+[node name="Symbol4" type="Sprite3D" parent="Screen" unique_id=521847119]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161797, 1.3283271, -0.24)
+pixel_size = 0.005
+texture = ExtResource("2_tpn08")
