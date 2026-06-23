@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://clysfumbar753"]
+
+[ext_resource type="PackedScene" uid="uid://dn7cf5pqe37pv" path="res://player.tscn" id="1_0r486"]
+[ext_resource type="Script" uid="uid://dx2iavohmuruj" path="res://portal.gd" id="1_ef3v5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7ujp"]
+albedo_color = Color(0.7254902, 0.7490196, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jrjii"]
+size = Vector2(3, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6r214"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef3v5"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_6r214")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0r486"]
+size = Vector2(3, 2)
+
+[node name="Portal" type="Node3D" unique_id=120199755]
+script = ExtResource("1_ef3v5")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1350336744]
+material_override = SubResource("StandardMaterial3D_o7ujp")
+use_collision = true
+size = Vector3(20, 1, 20)
+
+[node name="Player" parent="." unique_id=819570037 instance=ExtResource("1_0r486")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5337524, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1354106401]
+transform = Transform3D(1, 0, 0, 0, 0.91856194, 0.39527714, 0, -0.39527714, 0.91856194, 0.7799072, 13.267929, 0)
+
+[node name="Torus" type="CSGTorus3D" parent="." unique_id=2069284512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9072266, -7.22229)
+
+[node name="Torus2" type="CSGTorus3D" parent="." unique_id=1481419797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8692627, 1.9072266, -7.22229)
+
+[node name="Sphere" type="CSGSphere3D" parent="." unique_id=1669358899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7844238, 8.182548)
+
+[node name="Sphere2" type="CSGSphere3D" parent="." unique_id=1282246252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3466797, 1.7844238, 8.182548)
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=606871511]
+size = Vector2i(1920, 1080)
+
+[node name="PortalCamera" type="Camera3D" parent="SubViewport" unique_id=2037005376]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013183594, 1.5830688, -2.9864502)
+cull_mask = 524287
+
+[node name="PortalInput" type="Node3D" parent="." unique_id=1007137708]
+
+[node name="PortalInputMesh" type="MeshInstance3D" parent="PortalInput" unique_id=208891250]
+unique_name_in_owner = true
+transform = Transform3D(0.031863496, 0.9990045, 0.031220637, 0, -0.031236498, 0.999512, 0.9994922, -0.031847946, -0.000995304, -6.5251465, 1.5923462, 1.0499878)
+layers = 524289
+mesh = SubResource("PlaneMesh_jrjii")
+surface_material_override/0 = SubResource("StandardMaterial3D_ef3v5")
+
+[node name="PortalOutput" type="Node3D" parent="." unique_id=2047181145]
+
+[node name="PortalOutputMesh" type="MeshInstance3D" parent="PortalOutput" unique_id=716414551]
+unique_name_in_owner = true
+transform = Transform3D(-0.99944836, 0.033194553, 0.0010373878, 0, -0.031236498, 0.999512, 0.033210758, 0.9989607, 0.031219266, 0, 1.657238, -5.3010864)
+layers = 524288
+mesh = SubResource("PlaneMesh_0r486")
