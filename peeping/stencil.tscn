@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://b18vr0fjrb7ep"]
+
+[ext_resource type="PackedScene" uid="uid://dn7cf5pqe37pv" path="res://player.tscn" id="1_o7ujp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7ujp"]
+albedo_color = Color(0.7254902, 0.7490196, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqefa"]
+stencil_mode = 3
+stencil_flags = 2
+stencil_compare = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uprnm"]
+size = Vector2(3, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3sqg"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.086
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrjii"]
+next_pass = SubResource("StandardMaterial3D_x3sqg")
+albedo_color = Color(1.1310726e-06, 0.63421637, 9.62615e-07, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.086
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u63a2"]
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uprnm"]
+next_pass = SubResource("StandardMaterial3D_u63a2")
+albedo_color = Color(0.52937806, 0, 0.13161793, 1)
+stencil_mode = 2
+stencil_flags = 2
+stencil_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5rve"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 0, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iucci"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.6625295, 0.40381616, 3.85046e-07, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_reference = 2
+
+[node name="Stencil" type="Node3D" unique_id=120199755]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1350336744]
+material_override = SubResource("StandardMaterial3D_o7ujp")
+use_collision = true
+size = Vector3(20, 1, 20)
+
+[node name="Player" parent="." unique_id=819570037 instance=ExtResource("1_o7ujp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5337524, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1354106401]
+transform = Transform3D(1, 0, 0, 0, 0.91856194, 0.39527714, 0, -0.39527714, 0.91856194, 0.7799072, 13.267929, 0)
+
+[node name="Wall1" type="CSGBox3D" parent="." unique_id=2131108845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7456055, -4.5112915)
+size = Vector3(5, 3, 0.1)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1833072504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7456055, 6.131714)
+size = Vector3(5, 3, 0.1)
+
+[node name="Wall3" type="MeshInstance3D" parent="." unique_id=1344773359]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -5.3656616, 2.2340088, 0)
+material_override = SubResource("StandardMaterial3D_kqefa")
+transparency = 0.7
+mesh = SubResource("PlaneMesh_uprnm")
+
+[node name="Torus" type="CSGTorus3D" parent="." unique_id=2069284512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9072266, -7.22229)
+material_override = SubResource("StandardMaterial3D_jrjii")
+
+[node name="Sphere" type="CSGSphere3D" parent="." unique_id=1669358899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7844238, 8.182548)
+material_override = SubResource("StandardMaterial3D_uprnm")
+
+[node name="Cylinder1" type="CSGCylinder3D" parent="." unique_id=670981662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5641174, 1.8086548, 1.1152344)
+material_override = SubResource("StandardMaterial3D_s5rve")
+
+[node name="Cylinder2" type="CSGCylinder3D" parent="." unique_id=1645624395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5641174, 1.8086548, -0.9779053)
+material_override = SubResource("StandardMaterial3D_iucci")
