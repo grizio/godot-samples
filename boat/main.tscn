@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bn3tjeswrqebe"]
+
+[ext_resource type="Script" uid="uid://3hbov2smya05" path="res://water.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://jxh8oxkc7hfn" path="res://boat.gd" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ck80a"]
+sky_top_color = Color(0.36623234, 0.62241536, 1, 1)
+sky_horizon_color = Color(0.82137483, 0.6200132, 0, 1)
+ground_bottom_color = Color(0, 0.5137255, 1, 1)
+ground_horizon_color = Color(0.81960785, 0.61960787, 0, 1)
+
+[sub_resource type="Sky" id="Sky_jrjii"]
+sky_material = SubResource("ProceduralSkyMaterial_ck80a")
+
+[sub_resource type="Environment" id="Environment_uprnm"]
+background_mode = 2
+sky = SubResource("Sky_jrjii")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uprnm"]
+size = Vector2(100, 100)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
+noise_type = 0
+frequency = 0.137
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_h2yge")
+in_3d_space = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 0.5137255, 1, 1)
+roughness_texture = SubResource("NoiseTexture2D_0xm2m")
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jrjii"]
+size = Vector2(7, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+transparency = 1
+cull_mode = 2
+stencil_mode = 3
+stencil_flags = 2
+
+[node name="Node3D" type="Node3D" unique_id=586569886]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191793333]
+environment = SubResource("Environment_uprnm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=121602522]
+transform = Transform3D(1, 0, 0, 0, 0.6416122, 0.7670292, 0, -0.7670292, 0.6416122, 0, 17.317566, 19.367817)
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=919262826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013702393, 0.01758194, 0.06272125)
+mesh = SubResource("PlaneMesh_uprnm")
+surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
+script = ExtResource("1_0xm2m")
+
+[node name="Boat" type="Node3D" parent="." unique_id=1828422818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.709712, 0, -0.6594937)
+script = ExtResource("1_ig7tw")
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Boat" unique_id=12639308]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 1.9946374, 0, -0.14636195)
+size = Vector3(7, 1, 0.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Boat" unique_id=1382414872]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -1.9946375, 0, 0.14636195)
+size = Vector3(7, 1, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Boat" unique_id=1067379604]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -0.25613332, 0, -3.4906156)
+size = Vector3(0.5, 1, 4.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Boat" unique_id=853231461]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0.25613335, 0, 3.4906154)
+size = Vector3(0.5, 1, 4.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Boat" unique_id=1168331062]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, -0.5, 0)
+size = Vector3(7, 0.1, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat" unique_id=983347855]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, 0.5, 0)
+transparency = 1.0
+mesh = SubResource("PlaneMesh_jrjii")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="Camera3D" type="Camera3D" parent="Boat" unique_id=1937169884]
+transform = Transform3D(-0.9336016, 0.2465199, -0.26003072, -0.016963305, 0.6944862, 0.71930605, 0.35791102, 0.6759563, -0.64419174, 1.0281363, 12.568101, -12.657379)
