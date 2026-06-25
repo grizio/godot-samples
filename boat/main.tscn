@@ -16,24 +16,44 @@ sky_material = SubResource("ProceduralSkyMaterial_ck80a")
 background_mode = 2
 sky = SubResource("Sky_jrjii")
 
+[sub_resource type="Shader" id="Shader_0xm2m"]
+code = "shader_type spatial;
+
+uniform sampler2D normalmap_a: hint_normal;
+uniform sampler2D normalmap_b: hint_normal;
+uniform float normalmap_a_strength = 0.3;
+uniform float normalmap_b_strength = 0.4;
+
+void fragment() {
+	
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0ykl"]
+render_priority = 0
+shader = SubResource("Shader_0xm2m")
+shader_parameter/normalmap_a_strength = 0.3
+shader_parameter/normalmap_b_strength = 0.4
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_uprnm"]
 size = Vector2(100, 100)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
-noise_type = 0
-frequency = 0.137
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1bvp3"]
+frequency = 0.04
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
-generate_mipmaps = false
-noise = SubResource("FastNoiseLite_h2yge")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+noise = SubResource("FastNoiseLite_1bvp3")
 in_3d_space = true
+as_normal_map = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
 render_priority = 1
 transparency = 1
 cull_mode = 2
 albedo_color = Color(0, 0.5137255, 1, 1)
-roughness_texture = SubResource("NoiseTexture2D_0xm2m")
+roughness = 0.2
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_h2yge")
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -57,6 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 0.6416122, 0.7670292, 0, -0.7670292, 0.64161
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=919262826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013702393, 0.01758194, 0.06272125)
+material_overlay = SubResource("ShaderMaterial_g0ykl")
 mesh = SubResource("PlaneMesh_uprnm")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
 script = ExtResource("1_0xm2m")
