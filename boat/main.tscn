@@ -38,6 +38,12 @@ shader_parameter/normalmap_b_strength = 0.4
 [sub_resource type="PlaneMesh" id="PlaneMesh_uprnm"]
 size = Vector2(100, 100)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
+noise = SubResource("FastNoiseLite_h2yge")
+in_3d_space = true
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1bvp3"]
 frequency = 0.04
 
@@ -50,10 +56,12 @@ as_normal_map = true
 render_priority = 1
 transparency = 1
 cull_mode = 2
-albedo_color = Color(0, 0.5137255, 1, 1)
+albedo_color = Color(0.3480729, 0.44663608, 0.67514825, 1)
 roughness = 0.2
 normal_enabled = true
 normal_texture = SubResource("NoiseTexture2D_h2yge")
+bent_normal_enabled = true
+bent_normal_texture = SubResource("NoiseTexture2D_0xm2m")
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -74,9 +82,10 @@ environment = SubResource("Environment_uprnm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=121602522]
 transform = Transform3D(1, 0, 0, 0, 0.6416122, 0.7670292, 0, -0.7670292, 0.6416122, 0, 17.317566, 19.367817)
+light_color = Color(1, 0.62352943, 0, 1)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=919262826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013702393, 0.01758194, 0.06272125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026324272, 0.01758194, 0.058940887)
 material_overlay = SubResource("ShaderMaterial_g0ykl")
 mesh = SubResource("PlaneMesh_uprnm")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
@@ -114,4 +123,4 @@ mesh = SubResource("PlaneMesh_jrjii")
 surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
 
 [node name="Camera3D" type="Camera3D" parent="Boat" unique_id=1937169884]
-transform = Transform3D(-0.9336016, 0.2465199, -0.26003072, -0.016963305, 0.6944862, 0.71930605, 0.35791102, 0.6759563, -0.64419174, 1.0281363, 12.568101, -12.657379)
+transform = Transform3D(-0.9336016, 0.24651995, -0.2600307, -0.016963305, 0.6944862, 0.71930605, 0.35791102, 0.6759563, -0.6441916, 1.0281363, 5.543028, -11.933486)
