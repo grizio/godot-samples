@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dx0q5okobbg0n"]
+
+[ext_resource type="Script" uid="uid://jxh8oxkc7hfn" path="res://boat.gd" id="1_annr2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jrjii"]
+size = Vector2(7, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+transparency = 1
+cull_mode = 2
+stencil_mode = 3
+stencil_flags = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rpd4u"]
+
+[node name="Boat" type="Node3D" unique_id=1775326791]
+script = ExtResource("1_annr2")
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1742113123]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 1.9946374, 0, -0.14636195)
+size = Vector3(7, 3, 0.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=36846144]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -1.9946375, 0, 0.14636195)
+size = Vector3(7, 3, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1996458810]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -0.25613332, 0, -3.4906156)
+size = Vector3(0.5, 3, 4.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=905685212]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0.25613335, 0, 3.4906154)
+size = Vector3(0.5, 3, 4.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=812354527]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, -1.5, 0)
+size = Vector3(7, 0.1, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1444802243]
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, 1.5, 0)
+transparency = 1.0
+mesh = SubResource("PlaneMesh_jrjii")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=412501505]
+transform = Transform3D(-0.99990255, 0.0038484877, -0.013421272, 0, 0.9612617, 0.27563736, 0.013962141, 0.2756105, -0.961168, 0, 13.104, -16.693)
+
+[node name="FishingPoolDetector" type="Area3D" parent="." unique_id=1969958188]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FishingPoolDetector" unique_id=1087263178]
+shape = SubResource("SphereShape3D_rpd4u")

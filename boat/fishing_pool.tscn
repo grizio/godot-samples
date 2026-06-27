@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b4vy7ndinjqoa"]
+
+[ext_resource type="Script" uid="uid://belp8xbf1gyu8" path="res://fishing_pool.gd" id="1_5wyk7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rpd4u"]
+radius = 2.0
+
+[sub_resource type="Curve" id="Curve_j7wf6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j7wf6"]
+curve = SubResource("Curve_j7wf6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rpd4u"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.1, 1)
+gravity = Vector3(0, 0.1, 0)
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_j7wf6")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5wyk7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j7wf6"]
+noise = SubResource("FastNoiseLite_5wyk7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7wf6"]
+render_priority = 1
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0, 1, 1, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_j7wf6")
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_klncu"]
+material = SubResource("StandardMaterial3D_j7wf6")
+
+[node name="FishingPool" type="Node3D" unique_id=707265752]
+script = ExtResource("1_5wyk7")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1016320704]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1776403797]
+shape = SubResource("SphereShape3D_rpd4u")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=679253187]
+amount = 16
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_rpd4u")
+draw_pass_1 = SubResource("SphereMesh_klncu")

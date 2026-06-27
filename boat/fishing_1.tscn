@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://befkhke3adf73"]
+
+[ext_resource type="Script" uid="uid://cc0gukwi3ust8" path="res://fishing_1.gd" id="1_ijf5s"]
+[ext_resource type="Script" uid="uid://0a866a3ksbku" path="res://circle.gd" id="2_fi7fw"]
+[ext_resource type="Script" uid="uid://cqavapr77hf0u" path="res://triangle.gd" id="3_fi7fw"]
+
+[node name="Fishing1" type="Node2D" unique_id=519488957]
+script = ExtResource("1_ijf5s")
+
+[node name="Circle" type="Node2D" parent="." unique_id=2107230252]
+script = ExtResource("2_fi7fw")
+
+[node name="Triangle" type="Node2D" parent="." unique_id=2060030651]
+position = Vector2(164, -0.401)
+rotation = -1.5707964
+script = ExtResource("3_fi7fw")
+width = 32.0
+height = 32.0

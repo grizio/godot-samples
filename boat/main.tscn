@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bn3tjeswrqebe"]
 
 [ext_resource type="Script" uid="uid://3hbov2smya05" path="res://water.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://jxh8oxkc7hfn" path="res://boat.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bksevc5x0vnmg" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dx0q5okobbg0n" path="res://boat.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b4vy7ndinjqoa" path="res://fishing_pool.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://befkhke3adf73" path="res://fishing_1.tscn" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ck80a"]
 sky_top_color = Color(0.36623234, 0.62241536, 1, 1)
@@ -20,7 +23,7 @@ sky = SubResource("Sky_jrjii")
 size = Vector3(100, 10, 100)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
-offset = Vector3(-1868.0901, -1868.0901, 3736.1802)
+offset = Vector3(-9355.359, -9355.359, 18710.719)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
 noise = SubResource("FastNoiseLite_h2yge")
@@ -28,7 +31,7 @@ in_3d_space = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1bvp3"]
 frequency = 0.04
-offset = Vector3(1868.0901, 1868.0901, 3736.1802)
+offset = Vector3(9355.359, 9355.359, 18710.719)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
 noise = SubResource("FastNoiseLite_1bvp3")
@@ -51,16 +54,8 @@ stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jrjii"]
-size = Vector2(7, 4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
-transparency = 1
-cull_mode = 2
-stencil_mode = 3
-stencil_flags = 2
-
 [node name="Node3D" type="Node3D" unique_id=586569886]
+script = ExtResource("1_h2yge")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1191793333]
 environment = SubResource("Environment_uprnm")
@@ -75,36 +70,32 @@ mesh = SubResource("BoxMesh_0xm2m")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
 script = ExtResource("1_0xm2m")
 
-[node name="Boat" type="Node3D" parent="." unique_id=1828422818]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.709712, -0.68052125, -0.6594937)
-script = ExtResource("1_ig7tw")
-metadata/_edit_group_ = true
+[node name="Boat" parent="." unique_id=1775326791 instance=ExtResource("2_0xm2m")]
+unique_name_in_owner = true
+transform = Transform3D(-0.7619405, 0, -0.647647, 0, 1, 0, 0.647647, 0, -0.7619405, -0.709712, -0.68052125, -0.6594937)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Boat" unique_id=12639308]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 1.9946374, 0, -0.14636195)
-size = Vector3(7, 3, 0.5)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1263144198]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Boat" unique_id=1382414872]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -1.9946375, 0, 0.14636195)
-size = Vector3(7, 3, 0.5)
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=2096938255]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0 🐟"
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Boat" unique_id=1067379604]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -0.25613332, 0, -3.4906156)
-size = Vector3(0.5, 3, 4.5)
+[node name="FishLabel" type="Label" parent="CanvasLayer" unique_id=286116207]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.5
+offset_top = 59.0
+offset_right = 68.5
+offset_bottom = 147.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "FISH"
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Boat" unique_id=853231461]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0.25613335, 0, 3.4906154)
-size = Vector3(0.5, 3, 4.5)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Boat" unique_id=1168331062]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, -1.5, 0)
-size = Vector3(7, 0.1, 4)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat" unique_id=983347855]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, 1.5, 0)
-transparency = 1.0
-mesh = SubResource("PlaneMesh_jrjii")
-surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
-
-[node name="Camera3D" type="Camera3D" parent="Boat" unique_id=1937169884]
-transform = Transform3D(-0.9336016, 0.24651995, -0.2600307, -0.016963305, 0.6944862, 0.71930605, 0.35791102, 0.6759563, -0.6441916, 1.0281363, 5.543028, -11.933486)
+[node name="FishingPool" parent="." unique_id=707265752 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.19, 0, -14.358)
+fishing_scenes = Array[PackedScene]([ExtResource("5_lquwl"), ExtResource("5_lquwl"), ExtResource("5_lquwl")])

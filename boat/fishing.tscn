@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://p0vk240dueob"]
+
+[ext_resource type="Script" uid="uid://bfi6tevx1h4qg" path="res://fishing.gd" id="1_xb554"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb554"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Fishing" type="CanvasLayer" unique_id=581511374]
+script = ExtResource("1_xb554")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=702139083]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xb554")
+
+[node name="FishingContainer" type="PanelContainer" parent="PanelContainer" unique_id=798926490]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
