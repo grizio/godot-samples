@@ -16,29 +16,11 @@ sky_material = SubResource("ProceduralSkyMaterial_ck80a")
 background_mode = 2
 sky = SubResource("Sky_jrjii")
 
-[sub_resource type="Shader" id="Shader_0xm2m"]
-code = "shader_type spatial;
-
-uniform sampler2D normalmap_a: hint_normal;
-uniform sampler2D normalmap_b: hint_normal;
-uniform float normalmap_a_strength = 0.3;
-uniform float normalmap_b_strength = 0.4;
-
-void fragment() {
-	
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0ykl"]
-render_priority = 0
-shader = SubResource("Shader_0xm2m")
-shader_parameter/normalmap_a_strength = 0.3
-shader_parameter/normalmap_b_strength = 0.4
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_uprnm"]
-size = Vector2(100, 100)
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(100, 10, 100)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
+offset = Vector3(-1868.0901, -1868.0901, 3736.1802)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
 noise = SubResource("FastNoiseLite_h2yge")
@@ -46,6 +28,7 @@ in_3d_space = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1bvp3"]
 frequency = 0.04
+offset = Vector3(1868.0901, 1868.0901, 3736.1802)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
 noise = SubResource("FastNoiseLite_1bvp3")
@@ -55,13 +38,15 @@ as_normal_map = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
 render_priority = 1
 transparency = 1
-cull_mode = 2
-albedo_color = Color(0.3480729, 0.44663608, 0.67514825, 1)
+albedo_color = Color(0.34901962, 0.44705883, 0.6745098, 1)
 roughness = 0.2
 normal_enabled = true
 normal_texture = SubResource("NoiseTexture2D_h2yge")
 bent_normal_enabled = true
 bent_normal_texture = SubResource("NoiseTexture2D_0xm2m")
+subsurf_scatter_transmittance_enabled = true
+distance_fade_min_distance = 0.1
+distance_fade_max_distance = 0.5
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -85,39 +70,38 @@ transform = Transform3D(1, 0, 0, 0, 0.6416122, 0.7670292, 0, -0.7670292, 0.64161
 light_color = Color(1, 0.62352943, 0, 1)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=919262826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026324272, 0.01758194, 0.058940887)
-material_overlay = SubResource("ShaderMaterial_g0ykl")
-mesh = SubResource("PlaneMesh_uprnm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026, -5.296832, 0.059)
+mesh = SubResource("BoxMesh_0xm2m")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
 script = ExtResource("1_0xm2m")
 
 [node name="Boat" type="Node3D" parent="." unique_id=1828422818]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.709712, 0, -0.6594937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.709712, -0.68052125, -0.6594937)
 script = ExtResource("1_ig7tw")
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Boat" unique_id=12639308]
 transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 1.9946374, 0, -0.14636195)
-size = Vector3(7, 1, 0.5)
+size = Vector3(7, 3, 0.5)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Boat" unique_id=1382414872]
 transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -1.9946375, 0, 0.14636195)
-size = Vector3(7, 1, 0.5)
+size = Vector3(7, 3, 0.5)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Boat" unique_id=1067379604]
 transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, -0.25613332, 0, -3.4906156)
-size = Vector3(0.5, 1, 4.5)
+size = Vector3(0.5, 3, 4.5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Boat" unique_id=853231461]
 transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0.25613335, 0, 3.4906154)
-size = Vector3(0.5, 1, 4.5)
+size = Vector3(0.5, 3, 4.5)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Boat" unique_id=1168331062]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, -0.5, 0)
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, -1.5, 0)
 size = Vector3(7, 0.1, 4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Boat" unique_id=983347855]
-transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, 0.5, 0)
+transform = Transform3D(0.07318096, 0, -0.9973187, 0, 1, 0, 0.9973187, 0, 0.07318096, 0, 1.5, 0)
 transparency = 1.0
 mesh = SubResource("PlaneMesh_jrjii")
 surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")

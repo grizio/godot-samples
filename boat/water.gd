@@ -1,3 +1,4 @@
+@tool
 class_name Water extends MeshInstance3D
 
 const normal_speed: Vector3 = Vector3(1, 1, 2)
